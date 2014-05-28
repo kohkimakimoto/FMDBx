@@ -3,7 +3,7 @@ env: LC_CTYPE=en_US.UTF-8
 before_install:  
   - gem install cocoapods
   - gem install xcpretty
-
+  - sudo easy_install cpp-coveralls
 script:
   - xcodebuild -workspace FMDBx.xcworkspace -scheme FMDBx -sdk iphonesimulator -configuration Debug GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES test | xcpretty
 after_success:
