@@ -1,5 +1,7 @@
 # FMDBx
 
+[![Build Status](https://travis-ci.org/kohkimakimoto/FMDBx.svg?branch=master)](https://travis-ci.org/kohkimakimoto/FMDBx)
+
 An extension of [FMDB](https://github.com/ccgus/fmdb). Provides ORM and migration functionality.
 
 ## Warnings
