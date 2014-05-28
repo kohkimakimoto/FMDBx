@@ -88,7 +88,7 @@ FMDatabase *db = [[FMXDatabaseManager sharedInstance] defaultDatabase];
 Object relational mapper designed to Active record. 
 **This functionality is under the development.**
 
-#### Define Model class. 
+#### Define model class. 
 
 ```Objective-C
 @interface MyUser : FMXModel
@@ -134,5 +134,6 @@ user.age = @(44);
 
 ```Objective-C
 MyUser *user = (MyUser *)[MyUser modelByPrimaryKey:@(1)];
+NSLog(@"Hello %@", user.name);
 ```
 
