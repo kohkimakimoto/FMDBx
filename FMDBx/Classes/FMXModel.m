@@ -35,6 +35,47 @@
     return [[self query] modelByPrimaryKey:primaryKeyValue];
 }
 
++ (FMXModel *)modelWithResultSet:(FMResultSet *)rs
+{
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self];
+    
+    NSDictionary *columns = table.columns;
+    FMXModel *model = [[self alloc] init];
+    
+    for (id key in [columns keyEnumerator]) {
+        FMXColumnMap *column = [columns objectForKey:key];
+        
+        id value = nil;
+        if (column.type == FMXColumnMapTypeInt) {
+            value = [NSNumber numberWithInt:[rs intForColumn:column.name]];
+        } else if (column.type == FMXColumnMapTypeLong) {
+            value = [NSNumber numberWithLong:[rs longForColumn:column.name]];
+        } else if (column.type == FMXColumnMapTypeDouble) {
+            value = [NSNumber numberWithDouble:[rs doubleForColumn:column.name]];
+        } else if (column.type == FMXColumnMapTypeString) {
+            value = [rs stringForColumn:column.name];
+        } else if (column.type == FMXColumnMapTypeBool) {
+            value = [NSNumber numberWithBool:[rs boolForColumn:column.name]];
+        } else if (column.type == FMXColumnMapTypeDate) {
+            value = [rs dateForColumn:column.name];
+        } else if (column.type == FMXColumnMapTypeData) {
+            value = [rs dataForColumn:column.name];
+        }
+        
+        if (value) {
+            SEL selector = FMXSetterSelectorFromColumnName(column.name);
+            if ([model respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                [model performSelector:selector withObject:value];
+#pragma clang diagnostic pop
+            }
+        }
+    }
+    return model;
+}
+
+
 /**
  *  Get a query object.
  *

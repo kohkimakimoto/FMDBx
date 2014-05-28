@@ -21,7 +21,10 @@
 
 + (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue;
 
++ (FMXModel *)modelWithResultSet:(FMResultSet *)rs;
+
 + (FMXQuery *)query;
+
 
 - (void)schema:(FMXTableMap *)table;
 
