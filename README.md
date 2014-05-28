@@ -85,7 +85,7 @@ FMDatabase *db = [[FMXDatabaseManager sharedInstance] defaultDatabase];
 
 ### ORM
 
-Object relational mapper designed to Active record. 
+Object relational mapper designed to active record. 
 **This functionality is under the development.**
 
 #### Define model class. 
