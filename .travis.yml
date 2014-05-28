@@ -5,5 +5,7 @@ before_install:
   - gem install xcpretty
 
 script:
-  - xcodebuild -workspace FMDBx.xcworkspace -scheme FMDBx -sdk iphonesimulator -configuration Debug test
+  - xcodebuild -workspace FMDBx.xcworkspace -scheme FMDBx -sdk iphonesimulator -configuration Debug GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES test | xcpretty
+after_success:
+  - coveralls -e FMDBx
 
