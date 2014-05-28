@@ -111,7 +111,7 @@ Object relational mapper designed to Active record.
 @end
 ```
 
-### Insert, update and delete
+#### Insert, update and delete
 
 ```Objective-C
 MyUser *user = [[MyUser alloc] init];
@@ -130,7 +130,7 @@ user.age = @(44);
 [user delete];
 ```
 
-### Find by primary key
+#### Find by primary key
 
 ```Objective-C
 MyUser *user = (MyUser *)[MyUser modelByPrimaryKey:@(1)];
