@@ -123,7 +123,6 @@ user.age = @(33);
 user.age = @(44);
 [user save];
 
-
 // delete
 [user delete];
 ```
