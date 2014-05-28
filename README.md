@@ -54,9 +54,7 @@ Create your migration class.
          "create table users ("
          "  id integer primary key autoincrement,"
          "  name text not null,"
-         "  age integer not null,"
-         "  created_at integer not null,"
-         "  updated_at integer not null"
+         "  age integer not null"
          ")"
          ];
     }];
