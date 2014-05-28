@@ -26,6 +26,10 @@ pod 'FMDBx', :git => 'https://github.com/kohkimakimoto/FMDBx.git'
 
 ### Database Manager
 
+Database Manager:`FMXDatabaseManager` class is a singleton instance that manages sqlite database files
+and FMDatabase instance connecting them.
+This class also manages database schema status via a `FMXDatabaseMigration` object.
+
 #### Register a database
 
 ```Objective-C
@@ -80,6 +84,9 @@ FMDatabase *db = [[FMXDatabaseManager sharedInstance] defaultDatabase];
 ```
 
 ### ORM
+
+Object relational mapper designed to Active record. 
+**This functionality is under the development.**
 
 #### Define Model class. 
 
