@@ -1,6 +1,6 @@
 # FMDBx
 
-An extension of FMDB. Provides ORM and migration functionality.
+An extension of [FMDB](https://github.com/ccgus/fmdb). Provides ORM and migration functionality.
 
 ## Warnings
 
@@ -12,6 +12,15 @@ An extension of FMDB. Provides ORM and migration functionality.
 * Xcode5
 
 > Note: I am testing this product on the above condition.
+
+## Installation
+
+You can install FMDBx via [CocoaPods](http://cocoapods.org).
+Add the following line to your Podfile.
+
+```
+pod 'FMDBx', :git => 'https://github.com/kohkimakimoto/FMDBx.git'
+```
 
 ## Usage
 
