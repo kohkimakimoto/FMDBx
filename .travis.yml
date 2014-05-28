@@ -6,5 +6,5 @@ before_script:
   - gem install xcpretty
 
 script:
-  - xcodebuild -workspace FMDBx.xcworkspace -scheme FMDBxTests -sdk iphonesimulator -configuration Debug test
+  - xcodebuild -workspace FMDBx.xcworkspace -scheme FMDBx -sdk iphonesimulator -configuration Debug test
 
