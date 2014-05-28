@@ -1,5 +1,9 @@
 language: objective-c
 
+before_install: 
+  - gem install cocoapods
+  - gem install xcpretty
+
 script:
   - xcodebuild -workspace FMDBx.xcworkspace -scheme FMDBx -sdk iphonesimulator -configuration Debug test | xcpretty -c
 
