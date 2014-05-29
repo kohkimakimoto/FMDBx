@@ -46,13 +46,40 @@
     return model;
 }
 
-- (void)addWhere:(NSString *)columnName value:(id)value
+- (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
-    [self addWhere:columnName condition:FMXQueryEqual value:value];
+    FMXModel *model = nil;
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    
+    [db open];
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@", table.tableName, conditions];
+    FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
+    
+    if ([rs next]) {
+        model = [self.modelClass modelWithResultSet:rs];
+    }
+    [db close];
+    
+    return model;
 }
 
-- (void)addWhere:(NSString *)columnName condition:(FMXQueryCondition)condition value:(id)value
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
+    NSMutableArray *models = [[NSMutableArray alloc] init];
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
     
+    [db open];
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@", table.tableName, conditions];
+    FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
+    
+    while ([rs next]) {
+        [models addObject:[self.modelClass modelWithResultSet:rs]];
+    }
+    [db close];
+    
+    return models;
 }
+
 @end

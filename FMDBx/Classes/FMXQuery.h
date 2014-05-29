@@ -10,19 +10,6 @@
 
 @class FMXModel;
 
-typedef NS_ENUM(NSInteger, FMXQueryCondition) {
-    FMXQueryEqual = 0,
-    FMXQueryNotEqual,
-    FMXQueryGreaterThan,
-    FMXQueryLessThan,
-    FMXQueryGreaterEqual,
-    FMXQueryLessEqual,
-    FMXQueryLike,
-    FMXQueryNotLike,
-    FMXQueryIn,
-    FMXQueryNotIn
-};
-
 @interface FMXQuery : NSObject
 
 @property (assign, nonatomic, readonly) Class modelClass;
@@ -31,15 +18,9 @@ typedef NS_ENUM(NSInteger, FMXQueryCondition) {
 
 - (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue;
 
-- (void)addWhere:(NSString *)columnName value:(id)value;
+- (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
-- (void)addWhere:(NSString *)columnName condition:(FMXQueryCondition)condition value:(id)value;
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
-/*
- TODO:
-- (FMXModel *)model;
-
-- (NSArray *)models;
-*/
 
 @end

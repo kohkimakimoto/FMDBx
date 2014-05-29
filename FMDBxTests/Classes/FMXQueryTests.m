@@ -33,8 +33,20 @@
 
 - (void)testDefault
 {
+    for (int i = 0; i < 10; i++) {
+        FMXUser *user = [[FMXUser alloc] init];
+        user.name = [NSString stringWithFormat:@"KohkiMakimoto%d", i];
+        user.age = @(i);
+        user.createdAt = [NSDate date];
+        user.updatedAt = [NSDate date];
+        [user save];
+    }
     
+    FMXUser *user2 = (FMXUser *)[[FMXUser query] modelWhere:@"name = :name" parameters:@{@"name": @"KohkiMakimoto0"}];
+    XCTAssertEqualObjects(@(1), user2.id);
     
+    NSArray *users = [[FMXUser query] modelsWhere:@"name like :name" parameters:@{@"name": @"KohkiMakimoto%"}];
+    XCTAssertEqual(10, users.count);
 }
 
 @end
