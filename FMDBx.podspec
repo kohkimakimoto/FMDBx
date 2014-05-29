@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { 'Kohki Makimoto' => 'kohki.makimoto@gmail.com' }
   s.source       = { :git => 'https://github.com/kohkimakimoto/FMDBx.git', :tag => s.version.to_s }
-  s.source_files = 'Classes/*.{h,m}'
+  s.source_files = 'FMDBx/Classes/*.{h,m}'
   s.library      = 'sqlite3'
   s.requires_arc = true
   s.platform     = :ios
