@@ -35,6 +35,16 @@
     return [[self query] modelByPrimaryKey:primaryKeyValue];
 }
 
++ (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
+{
+    return [[self query] modelWhere:conditions parameters:parameters];
+}
+
++ (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
+{
+    return [[self query] modelsWhere:conditions parameters:parameters];
+}
+
 + (FMXModel *)modelWithResultSet:(FMResultSet *)rs
 {
     FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self];

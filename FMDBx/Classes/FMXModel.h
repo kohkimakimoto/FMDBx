@@ -21,10 +21,13 @@
 
 + (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue;
 
++ (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
+
 + (FMXModel *)modelWithResultSet:(FMResultSet *)rs;
 
-+ (FMXQuery *)query;
++ (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
++ (FMXQuery *)query;
 
 - (void)schema:(FMXTableMap *)table;
 
