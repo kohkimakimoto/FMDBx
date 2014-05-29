@@ -62,7 +62,6 @@
     
     // delete
     [user delete];
-    
     FMXUser *retUser5 = (FMXUser *)[FMXUser modelByPrimaryKey:@(1)];
     XCTAssertNil(retUser5);
 }

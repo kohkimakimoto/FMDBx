@@ -31,12 +31,12 @@ typedef NS_ENUM(NSInteger, FMXQueryCondition) {
 
 - (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue;
 
+- (void)addWhere:(NSString *)columnName value:(id)value;
+
+- (void)addWhere:(NSString *)columnName condition:(FMXQueryCondition)condition value:(id)value;
+
 /*
-TODO:
-- (FMXQuery *)queryWithWhere:(NSString *)columnName value:(id)value;
-
-- (FMXQuery *)queryWithWhere:(NSString *)columnName condition:(FMXQueryCondition)condition value:(id)value;
-
+ TODO:
 - (FMXModel *)model;
 
 - (NSArray *)models;

@@ -46,4 +46,13 @@
     return model;
 }
 
+- (void)addWhere:(NSString *)columnName value:(id)value
+{
+    [self addWhere:columnName condition:FMXQueryEqual value:value];
+}
+
+- (void)addWhere:(NSString *)columnName condition:(FMXQueryCondition)condition value:(id)value
+{
+    
+}
 @end

@@ -34,6 +34,7 @@
 		C25B3DB6193320A600174E72 /* FMXTableMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DB5193320A600174E72 /* FMXTableMap.m */; };
 		C25B3DB9193320BE00174E72 /* FMXColumnMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DB8193320BE00174E72 /* FMXColumnMap.m */; };
 		C25B3DBC1934376B00174E72 /* FMXQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DBB1934376B00174E72 /* FMXQuery.m */; };
+		C25B3DF91936D46600174E72 /* FMXQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DF81936D46600174E72 /* FMXQueryTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		C25B3DB8193320BE00174E72 /* FMXColumnMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXColumnMap.m; sourceTree = "<group>"; };
 		C25B3DBA1934376B00174E72 /* FMXQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXQuery.h; sourceTree = "<group>"; };
 		C25B3DBB1934376B00174E72 /* FMXQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXQuery.m; sourceTree = "<group>"; };
+		C25B3DF81936D46600174E72 /* FMXQueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXQueryTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				C254D24719318BCF0040AE69 /* FMXDatabaseManagerTests.m */,
 				C25B3DB219323B4D00174E72 /* FMXHelpersTests.m */,
 				C25B3DA519321B2D00174E72 /* FMXModelTests.m */,
+				C25B3DF81936D46600174E72 /* FMXQueryTests.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				C254D22919317EDC0040AE69 /* FMDBxTests.m in Sources */,
 				C25B3DAC19321BC600174E72 /* FMXUser.m in Sources */,
 				C25B3D9F1931904700174E72 /* FMXTestMigration.m in Sources */,
+				C25B3DF91936D46600174E72 /* FMXQueryTests.m in Sources */,
 				C25B3DB319323B4D00174E72 /* FMXHelpersTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
