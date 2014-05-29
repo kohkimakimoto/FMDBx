@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FMDBx"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "An extension of FMDB. Providing ORM and migration functionality."
   s.homepage     = "https://github.com/kohkimakimoto/FMDBx"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
