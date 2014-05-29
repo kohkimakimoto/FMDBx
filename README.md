@@ -28,15 +28,28 @@ pod 'FMDBx', :git => 'https://github.com/kohkimakimoto/FMDBx.git'
 
 ### Database Manager
 
-Database Manager:`FMXDatabaseManager` class is a singleton instance that manages sqlite database files
-and FMDatabase instance connecting them.
-This class also manages database schema status via migration object.
+Database Manager:`FMXDatabaseManager` class is a singleton instance that manages sqlite database files and FMDatabase instances connecting them.
 
 #### Register a database
 
 ```Objective-C
 [[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"database.sqlite" migration:nil];
 ```
+
+#### Get a FMDatabase instance from a registered database
+
+```Objective-C
+FMDatabase *db = [[FMXDatabaseManager sharedInstance] defaultDatabase];
+[db open];
+
+// your code for databse operations
+
+[db close];
+```
+
+### Migration
+
+`FMXDatabaseManager` can have a migration object to initialize and migrate database schema.
 
 #### Register a database with a migration class
 
@@ -60,27 +73,26 @@ Create your migration class.
          ")"
          ];
     }];
+
+    [self upToVersion:2 action:^(FMDatabase *db){
+        // ... schema changes for version 2       
+    }];
+
+    [self upToVersion:3 action:^(FMDatabase *db){
+        // ... schema changes for version 3       
+    }];
+
+    // ...etc
 }
 
 @end
 ```
 
-Register database with instance of migration class.
+Register database with an instance of migration class.
 
 ```Objective-C
 [[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"database.sqlite" 
                                                            migration:[[MyMigration alloc] init]];
-```
-
-#### Get a FMDatabase instance from a registered database
-
-```Objective-C
-FMDatabase *db = [[FMXDatabaseManager sharedInstance] defaultDatabase];
-[db open];
-
-// your code for databse operations
-
-[db close];
 ```
 
 ### ORM
@@ -115,8 +127,8 @@ It is designed to active record.
 
 ```Objective-C
 MyUser *user = [[MyUser alloc] init];
-user.name = @"kohki makimoto";
-user.age = @(33);
+user.name = @"kohki Makimoto";
+user.age = @(34);
 
 // insert
 [user save];
@@ -134,5 +146,19 @@ user.age = @(44);
 ```Objective-C
 MyUser *user = (MyUser *)[MyUser modelByPrimaryKey:@(1)];
 NSLog(@"Hello %@", user.name);
+```
+
+#### Find by where conditions.
+
+You can get a model.
+
+```Objective-C
+FMXUser *user = (FMXUser *)[[FMXUser query] modelWhere:@"name = :name" parameters:@{@"name": @"Kohki Makimoto"}];
+```
+
+You can get multiple models
+
+```Objective-C
+FMXUser *user = (FMXUser *)[[FMXUser query] modelsWhere:@"age = :age" parameters:@{@"name": @34}];
 ```
 
