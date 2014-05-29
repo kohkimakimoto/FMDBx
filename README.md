@@ -148,7 +148,7 @@ MyUser *user = (MyUser *)[MyUser modelByPrimaryKey:@(1)];
 NSLog(@"Hello %@", user.name);
 ```
 
-#### Find by where conditions.
+#### Find by where conditions
 
 You can get a model.
 
