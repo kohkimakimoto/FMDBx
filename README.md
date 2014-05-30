@@ -26,6 +26,10 @@ pod 'FMDBx', :git => 'https://github.com/kohkimakimoto/FMDBx.git'
 
 ## Usage
 
+* [Database Manager](#database-manager)
+* [Migration](#migration)
+* [ORM](#orm)
+
 ### Database Manager
 
 Database Manager:`FMXDatabaseManager` class is a singleton instance that manages sqlite database files and FMDatabase instances connecting them.
