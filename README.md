@@ -144,6 +144,22 @@ The model class needs primary key. So you need to define primary key configurati
 [table hasIntColumn:@"id" withPrimaryKey:YES];
 ```
 
+
+If you want to change a table name mapped from a model class, you can specify table name like the following.
+
+```Objective-C
+@implementation ABCUser
+
+- (void)schema:(FMXTableMap *)table
+{
+    [table setTableName:@"custom_users"];
+}
+
+@end
+```
+
+
+
 #### Insert, update and delete
 
 You can use a model class to insert, update and delete data.
