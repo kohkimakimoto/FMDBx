@@ -46,6 +46,9 @@
     XCTAssertEqualObjects(@(1), user2.id);
     
     NSArray *users = [[FMXUser query] modelsWhere:@"name like :name" parameters:@{@"name": @"KohkiMakimoto%"}];
+    for (FMXUser *user3 in users) {
+        NSLog(@"%@", user3.name);
+    }
     XCTAssertEqual(10, users.count);
 }
 

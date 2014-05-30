@@ -36,6 +36,9 @@ Database Manager:`FMXDatabaseManager` class is a singleton instance that manages
 [[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"database.sqlite" migration:nil];
 ```
 
+At the above example, you don't need to place `database.sqlite` file by hand. 
+`FMXDatabaseManager` class automatically create initial empty `database.sqlite` file in the `NSDocumentDirectory`(Documents).
+
 #### Get a FMDatabase instance from a registered database
 
 ```Objective-C
@@ -88,7 +91,7 @@ Create your migration class.
 @end
 ```
 
-Register database with an instance of migration class.
+Register database with an instance of migration class. It runs migration tasks.
 
 ```Objective-C
 [[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"database.sqlite" 
@@ -97,21 +100,29 @@ Register database with an instance of migration class.
 
 ### ORM
 
-It is designed to active record.
-**This is under the development. It doesn't have enough functionality.**
+It is designed as ActiveRecord.
 
-#### Define model class. 
+#### Define a model class
+
+You need to define model classes for each tables.
+By defaul, A model class automatically maps a table which is named pluralized class name without prefix.(It's not strict. Just add `s` end of the term). 
+
+In the following example code, `ABCUser` model class maps `users` table at default.
 
 ```Objective-C
-@interface MyUser : FMXModel
+@interface ABCUser : FMXModel
 
 @property (strong, nonatomic) NSNumber *id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSNumber *age;
 
 @end
+```
 
-@implementation MyUser
+You need to define `schema` method like the following to map each properties with table columns.
+
+```Objective-C
+@implementation ABCUser
 
 - (void)schema:(FMXTableMap *)table
 {
@@ -123,11 +134,23 @@ It is designed to active record.
 @end
 ```
 
-#### Insert, update and delete
+The model class needs primary key. So you need to define primary key configuration. Please see below example.
 
 ```Objective-C
-MyUser *user = [[MyUser alloc] init];
-user.name = @"kohki Makimoto";
+[table hasIntIncrementsColumn:@"id"];
+
+// or 
+
+[table hasIntColumn:@"id" withPrimaryKey:YES];
+```
+
+#### Insert, update and delete
+
+You can use a model class to insert, update and delete data.
+
+```Objective-C
+ABCUser *user = [[ABCUser alloc] init];
+user.name = @"Kohki Makimoto";
 user.age = @(34);
 
 // insert
@@ -144,7 +167,7 @@ user.age = @(44);
 #### Find by primary key
 
 ```Objective-C
-MyUser *user = (MyUser *)[MyUser modelByPrimaryKey:@(1)];
+ABCUser *user = (ABCUser *)[ABCUser modelByPrimaryKey:@(1)];
 NSLog(@"Hello %@", user.name);
 ```
 
@@ -153,12 +176,15 @@ NSLog(@"Hello %@", user.name);
 You can get a model.
 
 ```Objective-C
-FMXUser *user = (FMXUser *)[[FMXUser query] modelWhere:@"name = :name" parameters:@{@"name": @"Kohki Makimoto"}];
+ABCUser *user = (ABCUser *)[ABCUser modelWhere:@"name = :name" parameters:@{@"name": @"Kohki Makimoto"}];
 ```
 
-You can get multiple models
+You can get multiple models.
 
 ```Objective-C
-FMXUser *user = (FMXUser *)[[FMXUser query] modelsWhere:@"age = :age" parameters:@{@"name": @34}];
+NSArray *users = [ABCUser modelsWhere:@"age = :age" parameters:@{@"age": @34}];
+for (ABCUser *user in users) {
+    NSLog(@"Hello %@!", user.name);
+}
 ```
 
