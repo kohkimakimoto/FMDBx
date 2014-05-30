@@ -12,6 +12,7 @@ An extension of [FMDB](https://github.com/ccgus/fmdb). Providing ORM and migrati
 
 * iOS 7.0
 * Xcode5
+* ARC
 
 > Note: I am testing this product on the above condition.
 
