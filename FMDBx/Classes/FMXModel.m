@@ -51,6 +51,7 @@
     
     NSDictionary *columns = table.columns;
     FMXModel *model = [[self alloc] init];
+    model.isNew = NO;
     
     for (id key in [columns keyEnumerator]) {
         FMXColumnMap *column = [columns objectForKey:key];

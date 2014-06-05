@@ -44,6 +44,7 @@
     
     FMXUser *user2 = (FMXUser *)[[FMXUser query] modelWhere:@"name = :name" parameters:@{@"name": @"KohkiMakimoto0"}];
     XCTAssertEqualObjects(@(1), user2.id);
+    XCTAssertFalse(user2.isNew);
     
     NSArray *users = [[FMXUser query] modelsWhere:@"name like :name" parameters:@{@"name": @"KohkiMakimoto%"}];
     for (FMXUser *user3 in users) {

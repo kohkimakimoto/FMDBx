@@ -45,7 +45,6 @@
     XCTAssertEqualObjects(@"web_users", FMXDefaultTableNameFromModelName(@"WebUser"));
     
     XCTAssertEqualObjects(@"bbb_a_a_as", FMXDefaultTableNameFromModelName(@"AABbbAAA"));
-    
 }
 
 @end
