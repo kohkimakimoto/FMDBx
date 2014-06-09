@@ -30,6 +30,7 @@ pod 'FMDBx', :git => 'https://github.com/kohkimakimoto/FMDBx.git'
 * [Database Manager](#database-manager)
 * [Migration](#migration)
 * [ORM](#orm)
+* [Import data from CSV](#seed-data-from-csv)
 
 ### Database Manager
 
@@ -163,8 +164,6 @@ If you want to change a table name mapped from a model class, you can specify ta
 @end
 ```
 
-
-
 #### Insert, update and delete
 
 You can use a model class to insert, update and delete data.
@@ -207,5 +206,36 @@ NSArray *users = [ABCUser modelsWhere:@"age = :age" parameters:@{@"age": @34}];
 for (ABCUser *user in users) {
     NSLog(@"Hello %@!", user.name);
 }
+```
+
+### Import data from CSV 
+
+You can add some data in your migration task or others.
+
+```Objective-C
+@interface MyMigration : FMXDatabaseMigration
+
+@end
+
+@implementation MyMigration
+
+- (void)migrate
+{
+    [self upToVersion:1 action:^(FMDatabase *db){
+        [db executeUpdate:@""
+         "create table users ("
+         "  id integer primary key autoincrement,"
+         "  name text not null,"
+         "  age integer not null"
+         ")"
+         ];
+
+        [FMXCsvTable foreachFileName:@"users.csv" process:^(NSDictionary *row) {
+            [ABCUser createWithValues:row];
+        }];
+    }];
+}
+
+@end
 ```
 
