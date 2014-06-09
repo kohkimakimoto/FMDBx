@@ -1,5 +1,5 @@
 //
-//  FMXCsvTests.m
+//  FMXCsvTableTests.m
 //  FMDBx
 //
 //  Created by KohkiMakimoto on 6/9/14.
@@ -32,6 +32,19 @@
 
 - (void)testForeachFileName
 {
+    [FMXCsvTable foreachFileName:@"users.csv" columnSeparator:@"," process:^(NSDictionary *row){
+        NSNumber *idNumber = (NSNumber *)[row objectForKey:@"id"];
+        if ([idNumber isEqualToNumber:@(1)]) {
+            XCTAssertEqualObjects(@"Kohki Makimoto1", [row objectForKey:@"name"]);
+            XCTAssertEqualObjects(@(34), [row objectForKey:@"age"]);
+        }
+        
+        if ([idNumber isEqualToNumber:@(2)]) {
+            XCTAssertEqualObjects(@"Kohki Makimoto2", [row objectForKey:@"name"]);
+            XCTAssertEqualObjects(@(35), [row objectForKey:@"age"]);
+        }
+
+    }];
 }
 
 - (void)testForeachURL

@@ -37,6 +37,8 @@
 		C25B3DF91936D46600174E72 /* FMXQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DF81936D46600174E72 /* FMXQueryTests.m */; };
 		C2935322194569F5003D2E6B /* FMXCsvTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C2935321194569F5003D2E6B /* FMXCsvTable.m */; };
 		C293532419456A18003D2E6B /* FMXCsvTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C293532319456A18003D2E6B /* FMXCsvTableTests.m */; };
+		C29353271945839B003D2E6B /* users.csv in Resources */ = {isa = PBXBuildFile; fileRef = C29353261945839B003D2E6B /* users.csv */; };
+		C293532819458484003D2E6B /* users.csv in Resources */ = {isa = PBXBuildFile; fileRef = C29353261945839B003D2E6B /* users.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,7 @@
 		C2935320194569F5003D2E6B /* FMXCsvTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXCsvTable.h; sourceTree = "<group>"; };
 		C2935321194569F5003D2E6B /* FMXCsvTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXCsvTable.m; sourceTree = "<group>"; };
 		C293532319456A18003D2E6B /* FMXCsvTableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXCsvTableTests.m; sourceTree = "<group>"; };
+		C29353261945839B003D2E6B /* users.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = users.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +230,7 @@
 		C254D2461931807C0040AE69 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C293532519458384003D2E6B /* CSV */,
 				C25B3DA719321B7000174E72 /* Models */,
 				C25B3DA01931905200174E72 /* Migration */,
 				C25B3DA3193219ED00174E72 /* FMXDatabaseConfigurationTests.m */,
@@ -255,6 +259,14 @@
 				C25B3DAB19321BC600174E72 /* FMXUser.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		C293532519458384003D2E6B /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				C29353261945839B003D2E6B /* users.csv */,
+			);
+			name = CSV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C293532819458484003D2E6B /* users.csv in Resources */,
 				C254D20E19317EDC0040AE69 /* InfoPlist.strings in Resources */,
 				C254D21619317EDC0040AE69 /* Images.xcassets in Resources */,
 			);
@@ -345,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C254D22719317EDC0040AE69 /* InfoPlist.strings in Resources */,
+				C29353271945839B003D2E6B /* users.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  FMXCsv.m
+//  FMXCsvTable.m
 //  FMDBx
 //
 //  Created by KohkiMakimoto on 6/9/14.
@@ -37,14 +37,17 @@
 
 #import "FMXCsvTable.h"
 
+static NSCharacterSet *FMXCsvTableDigitCharacterSet = nil;
+static NSArray *FMXCsvTableBooleanStrings = nil;
+
 @implementation FMXCsvTable
 
-+ (void)foreachFileName:(NSString *)fileName process:(void (^)(NSArray *))process
++ (void)foreachFileName:(NSString *)fileName process:(void (^)(NSDictionary *))process
 {
     [self foreachFileName:fileName columnSeparator:@"," process:process];
 }
 
-+ (void)foreachFileName:(NSString *)fileName columnSeparator:(NSString *)separator process:(void (^)(NSArray *))process
++ (void)foreachFileName:(NSString *)fileName columnSeparator:(NSString *)separator process:(void (^)(NSDictionary *))process
 {
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:fileName ofType:nil];
@@ -52,16 +55,79 @@
     [self foreachURL:url columnSeparator:separator process:process];
 }
 
-+ (void)foreachURL:(NSURL *)url process:(void (^)(NSArray *))process
++ (void)foreachURL:(NSURL *)url process:(void (^)(NSDictionary *))process
 {
     [self foreachURL:url columnSeparator:@"," process:process];
 }
 
-+ (void)foreachURL:(NSURL *)url columnSeparator:(NSString *)separator process:(void (^)(NSArray *))process
++ (void)foreachURL:(NSURL *)url columnSeparator:(NSString *)separator process:(void (^)(NSDictionary *))process
 {
     NSString *csvString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     csvString = [csvString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
     NSArray *lines = [csvString componentsSeparatedByString:@"\n"];
+    NSArray *headers = [self headersFromLines:lines columnSeparator:separator];
+    NSArray *rows = [self rowsFromLines:lines headers:headers columnSeparator:separator];
+    
+    for (NSDictionary *row in rows) {
+        process(row);
+    }
+}
+
+# pragma mark - private methods
+
++ (NSArray *)headersFromLines:(NSArray *)lines columnSeparator:(NSString *)separator
+{
+    NSString *headerLine = lines.firstObject;
+    return [headerLine componentsSeparatedByString:separator];
+}
+
++ (NSArray *)rowsFromLines:(NSArray *)lines headers:(NSArray *)headers columnSeparator:(NSString *)separator
+{
+    NSMutableArray *rows = [NSMutableArray new];
+    for (NSString *line in lines) {
+        NSInteger lineNumber = [lines indexOfObject:line];
+        if (lineNumber == 0) {
+            continue;
+        }
+        
+        NSArray *values = [line componentsSeparatedByString:separator];
+        NSMutableDictionary *row = [NSMutableDictionary new];
+        for (NSString *header in headers) {
+            NSUInteger index = [headers indexOfObject:header];
+            NSString *value = values[index];
+            if ([self isDigit:value]) {
+                row[header] = [NSNumber numberWithLongLong:value.longLongValue];
+            } else if ([self isBoolean:value]) {
+                row[header] = [NSNumber numberWithBool:value.boolValue];
+            } else {
+                row[header] = values[index];
+            }
+        }
+        [rows addObject:[NSDictionary dictionaryWithDictionary:row]];
+    }
+    return [NSArray arrayWithArray:rows];
+}
+
++ (BOOL)isDigit:(NSString *)string
+{
+    if (!FMXCsvTableDigitCharacterSet) {
+        FMXCsvTableDigitCharacterSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    }
+    
+    NSScanner *scanner = [NSScanner localizedScannerWithString:string];
+    scanner.charactersToBeSkipped = NO;
+    [scanner scanCharactersFromSet:FMXCsvTableDigitCharacterSet intoString:NULL];
+    return scanner.isAtEnd;
+}
+
++ (BOOL)isBoolean:(NSString *)string
+{
+    if (!FMXCsvTableBooleanStrings) {
+        FMXCsvTableBooleanStrings = @[@"YES", @"NO", @"yes", @"no", @"TRUE", @"FALSE", @"true", @"false"];
+    }
+    
+    return [FMXCsvTableBooleanStrings containsObject:string];
 }
 
 @end

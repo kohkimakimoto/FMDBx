@@ -1,5 +1,5 @@
 //
-//  FMXCsv.h
+//  FMXCsvTable.h
 //  FMDBx
 //
 //  Created by KohkiMakimoto on 6/9/14.
@@ -10,12 +10,12 @@
 
 @interface FMXCsvTable : NSObject
 
-+ (void)foreachFileName:(NSString *)fileName process:(void (^)(NSArray *row))process;
++ (void)foreachFileName:(NSString *)fileName process:(void (^)(NSDictionary *row))process;
 
-+ (void)foreachFileName:(NSString *)fileName columnSeparator:(NSString *)separator process:(void (^)(NSArray *row))process;
++ (void)foreachFileName:(NSString *)fileName columnSeparator:(NSString *)separator process:(void (^)(NSDictionary *row))process;
 
-+ (void)foreachURL:(NSURL *)url process:(void (^)(NSArray *row))process;
++ (void)foreachURL:(NSURL *)url process:(void (^)(NSDictionary *row))process;
 
-+ (void)foreachURL:(NSURL *)url columnSeparator:(NSString *)separator process:(void (^)(NSArray *row))process;
++ (void)foreachURL:(NSURL *)url columnSeparator:(NSString *)separator process:(void (^)(NSDictionary *row))process;
 
 @end
