@@ -15,8 +15,8 @@
     [table hasIntIncrementsColumn:@"id"];
     [table hasStringColumn:@"name"];
     [table hasIntColumn:@"age"];
-    [table hasDataColumn:@"created_at"];
-    [table hasDataColumn:@"updated_at"];
+    [table hasDateColumn:@"created_at"];
+    [table hasDateColumn:@"updated_at"];
 }
 
 @end

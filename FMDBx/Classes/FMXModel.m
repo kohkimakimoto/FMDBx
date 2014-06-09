@@ -86,6 +86,57 @@
     return model;
 }
 
++ (FMXModel *)modelWithValues:(NSDictionary *)values
+{
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self];
+    NSDictionary *columns = table.columns;
+
+    FMXModel *model = [[self alloc] init];
+    
+    // TODO:
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyy-MM-dd'T'HH:mm:ssZ"];
+    
+    for (id key in [columns keyEnumerator]) {
+        FMXColumnMap *column = [columns objectForKey:key];
+        id value = values[column.name];
+        
+        if (column.type == FMXColumnMapTypeInt) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeLong) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeDouble) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeString) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeBool) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeDate && [value isKindOfClass:[NSString class]]) {
+            value = [formatter dateFromString:value];
+        } else if (column.type == FMXColumnMapTypeData) {
+            // Nothing to do;
+        }
+        
+        if (value) {
+            SEL selector = FMXSetterSelectorFromColumnName(column.name);
+            if ([model respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                [model performSelector:selector withObject:value];
+#pragma clang diagnostic pop
+            }
+        }
+    }
+
+    return model;
+}
+
++ (FMXModel *)createWithValues:(NSDictionary *)values;
+{
+    FMXModel *model = [self modelWithValues:values];
+    [model save];
+    return model;
+}
 
 /**
  *  Get a query object.

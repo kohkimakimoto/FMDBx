@@ -22,5 +22,4 @@
 
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
-
 @end

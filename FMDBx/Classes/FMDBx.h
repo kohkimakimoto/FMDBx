@@ -6,3 +6,4 @@
 #import "FMXTableMap.h"
 #import "FMXColumnMap.h"
 #import "FMXQuery.h"
+#import "FMXCsvTable.h"
