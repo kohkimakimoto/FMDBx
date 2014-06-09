@@ -239,3 +239,12 @@ You can add some data in your migration task or others.
 @end
 ```
 
+CSV file is like the following. The header line is must.
+
+```
+id,name,age
+1,Kohki Makimoto1,34
+2,Kohki Makimoto2,35
+3,Kohki Makimoto3,36
+```
+
