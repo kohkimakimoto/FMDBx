@@ -231,7 +231,7 @@ You can add some data in your migration task or others.
          ];
 
         [FMXCsvTable foreachFileName:@"users.csv" process:^(NSDictionary *row) {
-            [ABCUser createWithValues:row];
+            [ABCUser createWithValues:row database:db];
         }];
     }];
 }

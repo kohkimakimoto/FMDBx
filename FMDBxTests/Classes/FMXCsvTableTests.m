@@ -10,6 +10,7 @@
 #import "FMDBx.h"
 #import "FMXTestMigration.h"
 #import "FMXUser.h"
+#import "FMXTestMigration2.h"
 
 @interface FMXCsvTableTests : XCTestCase
 
@@ -53,8 +54,11 @@
     XCTAssertEqualObjects(@"Kohki Makimoto1", user.name);
 }
 
-- (void)testForeachURL
+- (void)testWithMigration
 {
+    [[FMXDatabaseManager sharedInstance] destroyDefaultDatabase];
+    [[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"default.sqlite"
+                                                               migration:[[FMXTestMigration2 alloc] init]];
 }
 
 @end

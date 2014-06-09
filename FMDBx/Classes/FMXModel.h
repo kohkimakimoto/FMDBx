@@ -30,13 +30,16 @@
 + (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
 + (FMXModel *)createWithValues:(NSDictionary *)values;
++ (FMXModel *)createWithValues:(NSDictionary *)values database:(FMDatabase *)db;
 
 + (FMXQuery *)query;
 
 - (void)schema:(FMXTableMap *)table;
 
 - (void)save;
+- (void)saveWithDatabase:(FMDatabase *)db;
 
 - (void)delete;
+- (void)deleteWithDatabase:(FMDatabase *)db;
 
 @end

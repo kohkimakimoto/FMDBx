@@ -133,8 +133,13 @@
 
 + (FMXModel *)createWithValues:(NSDictionary *)values;
 {
+    return [self createWithValues:values database:nil];
+}
+
++ (FMXModel *)createWithValues:(NSDictionary *)values database:(FMDatabase *)db
+{
     FMXModel *model = [self modelWithValues:values];
-    [model save];
+    [model saveWithDatabase:db];
     return model;
 }
 
@@ -153,24 +158,31 @@
  */
 - (void)save
 {
+    [self saveWithDatabase:nil];
+}
+
+- (void)saveWithDatabase:(FMDatabase *)db
+{
     if (self.isNew) {
-        [self insert];
+        [self insertWithDatabase:db];
     } else {
-        [self update];
+        [self updateWithDatabase:db];
     }
 }
 
 /**
  *  Insert
  */
-- (void)insert
+- (void)insertWithDatabase:(FMDatabase *)db
 {
     if (!self.isNew) {
         return;
     }
     
     FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
+    if (!db) {
+        db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
+    }
     
     NSDictionary *columns = table.columns;
     
@@ -222,15 +234,17 @@
 /**
  *  Update
  */
-- (void)update
+- (void)updateWithDatabase:(FMDatabase *)db
 {
     if (self.isNew) {
         return;
     }
     
     FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
-    
+    if (!db) {
+        db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
+    }
+
     if (![self valueForKey:[table columnForPrimaryKey].propertyName]) {
         return;
     }
@@ -271,17 +285,24 @@
     [db close];
 }
 
+- (void)delete
+{
+    [self deleteWithDatabase:nil];
+}
+
 /**
  *  Delete
  */
-- (void)delete
+- (void)deleteWithDatabase:(FMDatabase *)db
 {
     if (self.isNew) {
         return;
     }
     
     FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
+    if (!db) {
+        db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
+    }
     
     if (![self valueForKey:[table columnForPrimaryKey].propertyName]) {
         return;

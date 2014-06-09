@@ -39,6 +39,7 @@
 		C293532419456A18003D2E6B /* FMXCsvTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C293532319456A18003D2E6B /* FMXCsvTableTests.m */; };
 		C29353271945839B003D2E6B /* users.csv in Resources */ = {isa = PBXBuildFile; fileRef = C29353261945839B003D2E6B /* users.csv */; };
 		C293532819458484003D2E6B /* users.csv in Resources */ = {isa = PBXBuildFile; fileRef = C29353261945839B003D2E6B /* users.csv */; };
+		C2E4C59B1945AEA900F67DAA /* FMXTestMigration2.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E4C59A1945AEA900F67DAA /* FMXTestMigration2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		C2935321194569F5003D2E6B /* FMXCsvTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXCsvTable.m; sourceTree = "<group>"; };
 		C293532319456A18003D2E6B /* FMXCsvTableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXCsvTableTests.m; sourceTree = "<group>"; };
 		C29353261945839B003D2E6B /* users.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = users.csv; sourceTree = "<group>"; };
+		C2E4C5991945AEA900F67DAA /* FMXTestMigration2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXTestMigration2.h; sourceTree = "<group>"; };
+		C2E4C59A1945AEA900F67DAA /* FMXTestMigration2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXTestMigration2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +251,8 @@
 			children = (
 				C25B3D9D1931904700174E72 /* FMXTestMigration.h */,
 				C25B3D9E1931904700174E72 /* FMXTestMigration.m */,
+				C2E4C5991945AEA900F67DAA /* FMXTestMigration2.h */,
+				C2E4C59A1945AEA900F67DAA /* FMXTestMigration2.m */,
 			);
 			name = Migration;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 				C293532419456A18003D2E6B /* FMXCsvTableTests.m in Sources */,
 				C25B3DA4193219ED00174E72 /* FMXDatabaseConfigurationTests.m in Sources */,
 				C254D22919317EDC0040AE69 /* FMDBxTests.m in Sources */,
+				C2E4C59B1945AEA900F67DAA /* FMXTestMigration2.m in Sources */,
 				C25B3DAC19321BC600174E72 /* FMXUser.m in Sources */,
 				C25B3D9F1931904700174E72 /* FMXTestMigration.m in Sources */,
 				C25B3DF91936D46600174E72 /* FMXQueryTests.m in Sources */,
