@@ -10,4 +10,14 @@
 
 @implementation FMXCsv
 
++(void)foreachFileName:(NSString *)fileName action:(void (^)(NSArray *))action
+{
+    
+}
+
++(void)foreachURL:(NSURL *)url action:(void (^)(NSArray *))action
+{
+    
+}
+
 @end

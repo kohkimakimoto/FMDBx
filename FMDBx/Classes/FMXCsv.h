@@ -10,4 +10,7 @@
 
 @interface FMXCsv : NSObject
 
++ (void)foreachFileName:(NSString *)fileName action:(void (^)(NSArray *row))action;
++ (void)foreachURL:(NSURL *)url action:(void (^)(NSArray *row))action;
+
 @end

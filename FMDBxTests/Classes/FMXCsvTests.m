@@ -30,9 +30,19 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testForeachFileName
 {
+    [FMXCsv foreachFileName:@"test_user.csv" action:^(NSArray *row){
+    
+        
+    }];
+}
 
+- (void)testForeachURL
+{
+    [FMXCsv foreachURL:nil action:^(NSArray *row){
+        
+    }];
 }
 
 @end
