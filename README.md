@@ -30,7 +30,7 @@ pod 'FMDBx', :git => 'https://github.com/kohkimakimoto/FMDBx.git'
 * [Database Manager](#database-manager)
 * [Migration](#migration)
 * [ORM](#orm)
-* [Import data from CSV](#seed-data-from-csv)
+* [Import data from CSV](#import-data-from-csv)
 
 ### Database Manager
 
