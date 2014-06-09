@@ -93,9 +93,30 @@
 
     FMXModel *model = [[self alloc] init];
     
+    // TODO:
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyy-MM-dd'T'HH:mm:ssZ"];
+    
     for (id key in [columns keyEnumerator]) {
         FMXColumnMap *column = [columns objectForKey:key];
         id value = values[column.name];
+        
+        if (column.type == FMXColumnMapTypeInt) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeLong) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeDouble) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeString) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeBool) {
+            // Nothing to do;
+        } else if (column.type == FMXColumnMapTypeDate && [value isKindOfClass:[NSString class]]) {
+            value = [formatter dateFromString:value];
+        } else if (column.type == FMXColumnMapTypeData) {
+            // Nothing to do;
+        }
+        
         if (value) {
             SEL selector = FMXSetterSelectorFromColumnName(column.name);
             if ([model respondsToSelector:selector]) {
