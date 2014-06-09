@@ -88,7 +88,24 @@
 
 + (FMXModel *)modelWithValues:(NSDictionary *)values
 {
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self];
+    NSDictionary *columns = table.columns;
+
     FMXModel *model = [[self alloc] init];
+    
+    for (id key in [columns keyEnumerator]) {
+        FMXColumnMap *column = [columns objectForKey:key];
+        id value = values[column.name];
+        if (value) {
+            SEL selector = FMXSetterSelectorFromColumnName(column.name);
+            if ([model respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                [model performSelector:selector withObject:value];
+#pragma clang diagnostic pop
+            }
+        }
+    }
 
     return model;
 }
