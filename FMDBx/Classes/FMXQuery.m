@@ -9,7 +9,8 @@
 #import "FMXModel.h"
 #import "FMXTableMap.h"
 #import "FMXColumnMap.h"
-#import "FMDB.h"
+#import "FMDatabase.h"
+#import "FMResultSet.h"
 
 @interface FMXQuery ()
 
