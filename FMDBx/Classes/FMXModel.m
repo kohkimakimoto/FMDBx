@@ -86,6 +86,10 @@
     return model;
 }
 
++ (FMXModel *)createWithValues:(NSDictionary *)values;
+{
+    return [[self query] createModelWithValues:values];
+}
 
 /**
  *  Get a query object.

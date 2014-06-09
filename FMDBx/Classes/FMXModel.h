@@ -27,6 +27,8 @@
 
 + (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
++ (FMXModel *)createWithValues:(NSDictionary *)values;
+
 + (FMXQuery *)query;
 
 - (void)schema:(FMXTableMap *)table;

@@ -43,8 +43,14 @@
             XCTAssertEqualObjects(@"Kohki Makimoto2", [row objectForKey:@"name"]);
             XCTAssertEqualObjects(@(35), [row objectForKey:@"age"]);
         }
-
     }];
+    
+    [FMXCsvTable foreachFileName:@"users.csv" process:^(NSDictionary *row) {
+        [FMXUser createWithValues:row];
+    }];
+    
+    FMXUser *user = (FMXUser *)[FMXUser modelByPrimaryKey:@1];
+    XCTAssertEqualObjects(@"Kohki Makimoto1", user.name);
 }
 
 - (void)testForeachURL

@@ -22,5 +22,6 @@
 
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
+- (FMXModel *)createModelWithValues:(NSDictionary *)values;
 
 @end
