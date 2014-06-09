@@ -179,11 +179,13 @@
         return;
     }
     
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
+    BOOL isPrivateConnection = NO;
     if (!db) {
+        isPrivateConnection = YES;
         db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
     }
     
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
     NSDictionary *columns = table.columns;
     
     NSMutableArray *fields = [[NSMutableArray alloc] init];
@@ -211,9 +213,11 @@
      [@"" stringByPaddingToLength:((fields.count - 1) * 2) withString:@"?," startingAtIndex:0]
      ];
     
-    [db open];
-    [db beginTransaction];
-
+    if (isPrivateConnection) {
+        [db open];
+        [db beginTransaction];
+    }
+    
     [db executeUpdate:query withArgumentsInArray:values];
     
     // Update primary key after insert.
@@ -227,8 +231,10 @@
 
     self.isNew = NO;
     
-    [db commit];
-    [db close];
+    if (isPrivateConnection) {
+        [db commit];
+        [db close];
+    }
 }
 
 /**
@@ -240,15 +246,16 @@
         return;
     }
     
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
+    BOOL isPrivateConnection = NO;
     if (!db) {
+        isPrivateConnection = YES;
         db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
     }
-
+    
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
     if (![self valueForKey:[table columnForPrimaryKey].propertyName]) {
         return;
     }
-    
     NSDictionary *columns = table.columns;
     
     NSMutableArray *fields = [[NSMutableArray alloc] init];
@@ -276,13 +283,18 @@
     [query appendFormat:@"`%@` = ? ", [fields componentsJoinedByString:@"`=?,`"]];
     [query appendFormat:@"where `%@` = ?", table.primaryKeyName];
     
-    [db open];
-    [db beginTransaction];
+    if (isPrivateConnection) {
+        [db open];
+        [db beginTransaction];
+    }
     
     [db executeUpdate:query withArgumentsInArray:values];
     
-    [db commit];
-    [db close];
+    if (isPrivateConnection) {
+        [db commit];
+        [db close];
+    }
+
 }
 
 - (void)delete
@@ -299,11 +311,13 @@
         return;
     }
     
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
+    BOOL isPrivateConnection = NO;
     if (!db) {
+        isPrivateConnection = YES;
         db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
     }
     
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
     if (![self valueForKey:[table columnForPrimaryKey].propertyName]) {
         return;
     }
@@ -313,13 +327,17 @@
     [query appendFormat:@"delete from `%@` ", table.tableName];
     [query appendFormat:@"where `%@` = ?", table.primaryKeyName];
     
-    [db open];
-    [db beginTransaction];
+    if (isPrivateConnection) {
+        [db open];
+        [db beginTransaction];
+    }
     
     [db executeUpdate:query, [self valueForKey:[table columnForPrimaryKey].propertyName]];
     
-    [db commit];
-    [db close];
+    if (isPrivateConnection) {
+        [db commit];
+        [db close];
+    }
 }
 
 @end
