@@ -35,8 +35,8 @@
 		C25B3DB9193320BE00174E72 /* FMXColumnMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DB8193320BE00174E72 /* FMXColumnMap.m */; };
 		C25B3DBC1934376B00174E72 /* FMXQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DBB1934376B00174E72 /* FMXQuery.m */; };
 		C25B3DF91936D46600174E72 /* FMXQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DF81936D46600174E72 /* FMXQueryTests.m */; };
-		C2935322194569F5003D2E6B /* FMXCsv.m in Sources */ = {isa = PBXBuildFile; fileRef = C2935321194569F5003D2E6B /* FMXCsv.m */; };
-		C293532419456A18003D2E6B /* FMXCsvTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C293532319456A18003D2E6B /* FMXCsvTests.m */; };
+		C2935322194569F5003D2E6B /* FMXCsvTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C2935321194569F5003D2E6B /* FMXCsvTable.m */; };
+		C293532419456A18003D2E6B /* FMXCsvTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C293532319456A18003D2E6B /* FMXCsvTableTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,9 +94,9 @@
 		C25B3DBA1934376B00174E72 /* FMXQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXQuery.h; sourceTree = "<group>"; };
 		C25B3DBB1934376B00174E72 /* FMXQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXQuery.m; sourceTree = "<group>"; };
 		C25B3DF81936D46600174E72 /* FMXQueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXQueryTests.m; sourceTree = "<group>"; };
-		C2935320194569F5003D2E6B /* FMXCsv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXCsv.h; sourceTree = "<group>"; };
-		C2935321194569F5003D2E6B /* FMXCsv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXCsv.m; sourceTree = "<group>"; };
-		C293532319456A18003D2E6B /* FMXCsvTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXCsvTests.m; sourceTree = "<group>"; };
+		C2935320194569F5003D2E6B /* FMXCsvTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXCsvTable.h; sourceTree = "<group>"; };
+		C2935321194569F5003D2E6B /* FMXCsvTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXCsvTable.m; sourceTree = "<group>"; };
+		C293532319456A18003D2E6B /* FMXCsvTableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXCsvTableTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,8 +218,8 @@
 				C25B3DB8193320BE00174E72 /* FMXColumnMap.m */,
 				C25B3DBA1934376B00174E72 /* FMXQuery.h */,
 				C25B3DBB1934376B00174E72 /* FMXQuery.m */,
-				C2935320194569F5003D2E6B /* FMXCsv.h */,
-				C2935321194569F5003D2E6B /* FMXCsv.m */,
+				C2935320194569F5003D2E6B /* FMXCsvTable.h */,
+				C2935321194569F5003D2E6B /* FMXCsvTable.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 				C25B3DB219323B4D00174E72 /* FMXHelpersTests.m */,
 				C25B3DA519321B2D00174E72 /* FMXModelTests.m */,
 				C25B3DF81936D46600174E72 /* FMXQueryTests.m */,
-				C293532319456A18003D2E6B /* FMXCsvTests.m */,
+				C293532319456A18003D2E6B /* FMXCsvTableTests.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -393,7 +393,7 @@
 				C254D21419317EDC0040AE69 /* FMXAppDelegate.m in Sources */,
 				C254D21019317EDC0040AE69 /* main.m in Sources */,
 				C254D2431931805B0040AE69 /* FMXModel.m in Sources */,
-				C2935322194569F5003D2E6B /* FMXCsv.m in Sources */,
+				C2935322194569F5003D2E6B /* FMXCsvTable.m in Sources */,
 				C25B3DB6193320A600174E72 /* FMXTableMap.m in Sources */,
 				C254D2411931805B0040AE69 /* FMXDatabaseManager.m in Sources */,
 				C254D2401931805B0040AE69 /* FMXDatabaseConfiguration.m in Sources */,
@@ -408,7 +408,7 @@
 			files = (
 				C254D24819318BCF0040AE69 /* FMXDatabaseManagerTests.m in Sources */,
 				C25B3DA619321B2D00174E72 /* FMXModelTests.m in Sources */,
-				C293532419456A18003D2E6B /* FMXCsvTests.m in Sources */,
+				C293532419456A18003D2E6B /* FMXCsvTableTests.m in Sources */,
 				C25B3DA4193219ED00174E72 /* FMXDatabaseConfigurationTests.m in Sources */,
 				C254D22919317EDC0040AE69 /* FMDBxTests.m in Sources */,
 				C25B3DAC19321BC600174E72 /* FMXUser.m in Sources */,

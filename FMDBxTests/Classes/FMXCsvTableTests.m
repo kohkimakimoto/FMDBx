@@ -11,11 +11,11 @@
 #import "FMXTestMigration.h"
 #import "FMXUser.h"
 
-@interface FMXCsvTests : XCTestCase
+@interface FMXCsvTableTests : XCTestCase
 
 @end
 
-@implementation FMXCsvTests
+@implementation FMXCsvTableTests
 
 - (void)setUp
 {
@@ -32,17 +32,10 @@
 
 - (void)testForeachFileName
 {
-    [FMXCsv foreachFileName:@"test_user.csv" action:^(NSArray *row){
-    
-        
-    }];
 }
 
 - (void)testForeachURL
 {
-    [FMXCsv foreachURL:nil action:^(NSArray *row){
-        
-    }];
 }
 
 @end
