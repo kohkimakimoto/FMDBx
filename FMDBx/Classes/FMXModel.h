@@ -25,6 +25,8 @@
 
 + (FMXModel *)modelWithResultSet:(FMResultSet *)rs;
 
++ (FMXModel *)modelWithValues:(NSDictionary *)values;
+
 + (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
 + (FMXModel *)createWithValues:(NSDictionary *)values;

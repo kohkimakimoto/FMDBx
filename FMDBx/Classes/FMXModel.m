@@ -86,9 +86,18 @@
     return model;
 }
 
++ (FMXModel *)modelWithValues:(NSDictionary *)values
+{
+    FMXModel *model = [[self alloc] init];
+
+    return model;
+}
+
 + (FMXModel *)createWithValues:(NSDictionary *)values;
 {
-    return [[self query] createModelWithValues:values];
+    FMXModel *model = [self modelWithValues:values];
+    [model save];
+    return model;
 }
 
 /**

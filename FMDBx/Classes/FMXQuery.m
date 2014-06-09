@@ -83,8 +83,4 @@
     return models;
 }
 
-- (FMXModel *)createModelWithValues:(NSDictionary *)values
-{
-    return nil;
-}
 @end
