@@ -45,6 +45,11 @@
     return [[self query] modelsWhere:conditions parameters:parameters];
 }
 
++ (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
+{
+    return 0;
+}
+
 + (FMXModel *)modelWithResultSet:(FMResultSet *)rs
 {
     FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self];
