@@ -47,7 +47,7 @@
 
 + (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
-    return 0;
+    return [[self query] countWhere:conditions parameters:parameters];
 }
 
 + (FMXModel *)modelWithResultSet:(FMResultSet *)rs

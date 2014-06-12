@@ -22,4 +22,6 @@
 
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
+- (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
+
 @end
