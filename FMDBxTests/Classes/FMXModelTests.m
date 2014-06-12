@@ -61,9 +61,15 @@
     XCTAssertEqualObjects(@(44), retUser4.age);
     
     // count
-    NSInteger count = [FMXUser countWhere:nil parameters:nil];
-    XCTAssertEqual(1, count);
+    NSInteger count1 = [FMXUser count];
+    XCTAssertEqual(1, count1);
     
+    NSInteger count2 = [FMXUser countWhere:@"name = :name" parameters:@{@"name": @"kohki makimoto"}];
+    XCTAssertEqual(1, count2);
+
+    NSInteger count3 = [FMXUser countWhere:@"name = :name" parameters:@{@"name": @"AAAAAAA"}];
+    XCTAssertEqual(0, count3);
+
     // delete
     [user delete];
     FMXUser *retUser5 = (FMXUser *)[FMXUser modelByPrimaryKey:@(1)];

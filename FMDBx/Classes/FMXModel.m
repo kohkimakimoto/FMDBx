@@ -50,6 +50,11 @@
     return [[self query] countWhere:conditions parameters:parameters];
 }
 
++ (NSInteger)count
+{
+    return [self countWhere:nil parameters:nil];
+}
+
 + (FMXModel *)modelWithResultSet:(FMResultSet *)rs
 {
     FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self];
