@@ -111,9 +111,9 @@ It is designed as ActiveRecord.
 #### Define a model class
 
 You need to define model classes for each tables.
-By defaul, A model class automatically maps a table which is named pluralized class name without prefix.(It's not strict. Just add `s` end of the term). 
+By default, a model class automatically maps a table which is named pluralized class name without prefix.(It's not strict. Just add `s` end of the term). 
 
-In the following example code, `ABCUser` model class maps `users` table at default.
+For example, `ABCUser` model class maps `users` table at default.
 
 ```Objective-C
 @interface ABCUser : FMXModel
@@ -150,8 +150,8 @@ The model class needs primary key. So you need to define primary key configurati
 [table hasIntColumn:@"id" withPrimaryKey:YES];
 ```
 
-
-If you want to change a table name mapped from a model class, you can specify table name like the following.
+If you want to change a mapped table name from a default,
+you can specify table name like the following.
 
 ```Objective-C
 @implementation ABCUser
