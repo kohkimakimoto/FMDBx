@@ -54,7 +54,9 @@
     FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
     
     [db open];
-    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@", table.tableName, conditions];
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@",
+                     table.tableName,
+                     [self validatedConditionsString:conditions]];
     FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
     
     if ([rs next]) {
@@ -72,7 +74,9 @@
     FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
     
     [db open];
-    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@", table.tableName, conditions];
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@",
+                     table.tableName,
+                     [self validatedConditionsString:conditions]];
     FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
     
     while ([rs next]) {
@@ -81,6 +85,37 @@
     [db close];
     
     return models;
+}
+
+- (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
+{
+    NSInteger count = 0;
+    
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    
+    [db open];
+    NSString *sql = [NSString stringWithFormat:@"select count(*) as count from `%@` where %@",
+                     table.tableName,
+                     [self validatedConditionsString:conditions]];
+    FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
+    
+    if ([rs next]) {
+        count = [rs intForColumn:@"count"];
+    }
+    
+    [db close];
+    
+    return count;
+}
+
+- (NSString *)validatedConditionsString:(NSString *)conditions
+{
+    if (conditions == nil || [conditions isEqualToString:@""]) {
+        conditions = [NSString stringWithFormat:@"1 = 1"];
+    }
+    
+    return conditions;
 }
 
 @end

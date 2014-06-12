@@ -208,6 +208,16 @@ for (ABCUser *user in users) {
 }
 ```
 
+#### Count records by where conditions
+
+```Objective-C
+# Count all users.
+NSInteger count = [ABCUser count];
+
+# Count users whose name is 'Kohki Makimoto'.
+NSInteger count = [ABCUser countWhere:@"name = :name" parameters:@{@"name": @"Kohki Makimoto"}];
+```
+
 ### Import data from CSV 
 
 You can add some data in your migration task or others.

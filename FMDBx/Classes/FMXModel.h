@@ -29,7 +29,12 @@
 
 + (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
++ (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
+
++ (NSInteger)count;
+
 + (FMXModel *)createWithValues:(NSDictionary *)values;
+
 + (FMXModel *)createWithValues:(NSDictionary *)values database:(FMDatabase *)db;
 
 + (FMXQuery *)query;
