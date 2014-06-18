@@ -7,4 +7,4 @@ before_install:
 script:
   - xcodebuild -workspace FMDBx.xcworkspace -scheme FMDBx -sdk iphonesimulator -configuration Debug GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES test
 after_success:
-  - coveralls -e FMDBx
+  - coveralls -e FMDBxTests
