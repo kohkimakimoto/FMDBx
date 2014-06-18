@@ -27,9 +27,24 @@
 
 - (void)hasLongIncrementsColumn:(NSString *)name;
 
-- (void)hasDoubleColumn:(NSString *)name;
+- (void)hasLongLongIntColumn:(NSString *)name;
+
+- (void)hasLongLongIntColumn:(NSString *)name withPrimaryKey:(BOOL)key;
+
+- (void)hasLongLongIntIncrementsColumn:(NSString *)name;
+
+
+- (void)hasUnsignedLongLongIntColumn:(NSString *)name;
+
+- (void)hasUnsignedLongLongIntColumn:(NSString *)name withPrimaryKey:(BOOL)key;
+
+- (void)hasUnsignedLongLongIntIncrementsColumn:(NSString *)name;
+
+
 
 - (void)hasBoolColumn:(NSString *)name;
+
+- (void)hasDoubleColumn:(NSString *)name;
 
 - (void)hasStringColumn:(NSString *)name;
 

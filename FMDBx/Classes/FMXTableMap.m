@@ -61,14 +61,56 @@
     self.primaryKeyName = name;
 }
 
-- (void)hasDoubleColumn:(NSString *)name;
+- (void)hasLongLongIntColumn:(NSString *)name
 {
-    [self.columns setObject:[[FMXColumnMap alloc] initWithName:name type:FMXColumnMapTypeDouble] forKey:name];
+    [self.columns setObject:[[FMXColumnMap alloc] initWithName:name type:FMXColumnMapTypeLongLongInt] forKey:name];
+}
+
+- (void)hasLongLongIntColumn:(NSString *)name withPrimaryKey:(BOOL)key
+{
+    [self.columns setObject:[[FMXColumnMap alloc] initWithName:name type:FMXColumnMapTypeLongLongInt] forKey:name];
+    if (key) {
+        self.primaryKeyName = name;
+    }
+}
+
+- (void)hasLongLongIntIncrementsColumn:(NSString *)name
+{
+    FMXColumnMap *column = [[FMXColumnMap alloc] initWithName:name type:FMXColumnMapTypeLongLongInt];
+    column.increments = YES;
+    [self.columns setObject:column forKey:name];
+    self.primaryKeyName = name;
+}
+
+- (void)hasUnsignedLongLongIntColumn:(NSString *)name
+{
+    [self.columns setObject:[[FMXColumnMap alloc] initWithName:name type:FMXColumnMapTypeUnsignedLongLongInt] forKey:name];
+}
+
+- (void)hasUnsignedLongLongIntColumn:(NSString *)name withPrimaryKey:(BOOL)key
+{
+    [self.columns setObject:[[FMXColumnMap alloc] initWithName:name type:FMXColumnMapTypeUnsignedLongLongInt] forKey:name];
+    if (key) {
+        self.primaryKeyName = name;
+    }
+}
+
+- (void)hasUnsignedLongLongIntIncrementsColumn:(NSString *)name
+{
+    FMXColumnMap *column = [[FMXColumnMap alloc] initWithName:name type:FMXColumnMapTypeUnsignedLongLongInt];
+    column.increments = YES;
+    [self.columns setObject:column forKey:name];
+    self.primaryKeyName = name;
 }
 
 - (void)hasBoolColumn:(NSString *)name;
 {
     [self.columns setObject:[[FMXColumnMap alloc] initWithName:name type:FMXColumnMapTypeBool] forKey:name];
+}
+
+- (void)hasDoubleColumn:(NSString *)name;
+{
+    [self.columns setObject:[[FMXColumnMap alloc] initWithName:name type:FMXColumnMapTypeDouble] forKey:name];
 }
 
 - (void)hasStringColumn:(NSString *)name;

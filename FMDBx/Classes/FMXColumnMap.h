@@ -10,9 +10,11 @@
 typedef NS_ENUM(NSInteger, FMXColumnMapType) {
     FMXColumnMapTypeInt = 0,
     FMXColumnMapTypeLong,
+    FMXColumnMapTypeLongLongInt,
+    FMXColumnMapTypeUnsignedLongLongInt,
+    FMXColumnMapTypeBool,
     FMXColumnMapTypeDouble,
     FMXColumnMapTypeString,
-    FMXColumnMapTypeBool,
     FMXColumnMapTypeDate,
     FMXColumnMapTypeData
 };
