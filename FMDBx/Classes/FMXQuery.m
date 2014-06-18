@@ -67,6 +67,32 @@
     return model;
 }
 
+- (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy
+{
+    if (orderBy == nil) {
+        return [self modelWhere:conditions parameters:parameters];
+    }
+    
+    FMXModel *model = nil;
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    
+    [db open];
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@",
+                     table.tableName,
+                     [self validatedConditionsString:conditions],
+                     orderBy
+                     ];
+    FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
+    
+    if ([rs next]) {
+        model = [self.modelClass modelWithResultSet:rs];
+    }
+    [db close];
+    
+    return model;
+}
+
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
     NSMutableArray *models = [[NSMutableArray alloc] init];
@@ -77,6 +103,56 @@
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@",
                      table.tableName,
                      [self validatedConditionsString:conditions]];
+    FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
+    
+    while ([rs next]) {
+        [models addObject:[self.modelClass modelWithResultSet:rs]];
+    }
+    [db close];
+    
+    return models;
+}
+
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy
+{
+    if (orderBy == nil) {
+        return [self modelsWhere:conditions parameters:parameters];
+    }
+    
+    NSMutableArray *models = [[NSMutableArray alloc] init];
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    
+    [db open];
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@",
+                     table.tableName,
+                     [self validatedConditionsString:conditions],
+                     orderBy
+                     ];
+    FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
+    
+    while ([rs next]) {
+        [models addObject:[self.modelClass modelWithResultSet:rs]];
+    }
+    [db close];
+    
+    return models;
+}
+
+
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit
+{
+    NSMutableArray *models = [[NSMutableArray alloc] init];
+    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    
+    [db open];
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@ limit %ld",
+                     table.tableName,
+                     [self validatedConditionsString:conditions],
+                     orderBy,
+                     (long)limit
+                     ];
     FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
     
     while ([rs next]) {

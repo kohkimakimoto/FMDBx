@@ -20,7 +20,13 @@
 
 - (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
+- (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy;
+
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
+
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy;
+
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit;
 
 - (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 

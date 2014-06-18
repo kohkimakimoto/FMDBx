@@ -40,9 +40,24 @@
     return [[self query] modelWhere:conditions parameters:parameters];
 }
 
++ (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy
+{
+    return [[self query] modelWhere:conditions parameters:parameters orderBy:orderBy];
+}
+
 + (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
     return [[self query] modelsWhere:conditions parameters:parameters];
+}
+
++ (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy
+{
+    return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy];
+}
+
++ (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit
+{
+    return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy limit:limit];
 }
 
 + (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
