@@ -49,16 +49,20 @@
     XCTAssertEqualObjects(user.name, retUser2.name);
     XCTAssertEqualObjects(user.age, retUser2.age);
 
-    FMXUser *retUser3 =(FMXUser *)[[FMXUser query] modelByPrimaryKey:@(1)];
+    FMXUser *retUser3 =(FMXUser *)[FMXUser modelByPrimaryKey:@(1)];
     XCTAssertEqualObjects(user.name, retUser3.name);
     XCTAssertEqualObjects(user.age, retUser3.age);
+
+    FMXUser *retUser4 =(FMXUser *)[FMXUser modelWhere:@"name = :name" parameters:@{@"name": @"kohki makimoto"} orderBy:@"age desc"];
+    XCTAssertEqualObjects(user.name, retUser4.name);
+    XCTAssertEqualObjects(user.age, retUser4.age);
     
     // update
     user.age = @(44);
     [user save];
     
-    FMXUser *retUser4 =(FMXUser *)[FMXUser modelByPrimaryKey:@(1)];
-    XCTAssertEqualObjects(@(44), retUser4.age);
+    FMXUser *retUser5 =(FMXUser *)[FMXUser modelByPrimaryKey:@(1)];
+    XCTAssertEqualObjects(@(44), retUser5.age);
     
     // count
     NSInteger count1 = [FMXUser count];
@@ -72,8 +76,8 @@
 
     // delete
     [user delete];
-    FMXUser *retUser5 = (FMXUser *)[FMXUser modelByPrimaryKey:@(1)];
-    XCTAssertNil(retUser5);
+    FMXUser *retUser6 = (FMXUser *)[FMXUser modelByPrimaryKey:@(1)];
+    XCTAssertNil(retUser6);
 }
 
 @end

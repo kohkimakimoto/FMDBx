@@ -54,7 +54,7 @@
     FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
     
     [db open];
-    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@",
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ limit 1",
                      table.tableName,
                      [self validatedConditionsString:conditions]];
     FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
@@ -78,7 +78,7 @@
     FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
     
     [db open];
-    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@",
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@ limit 1",
                      table.tableName,
                      [self validatedConditionsString:conditions],
                      orderBy
