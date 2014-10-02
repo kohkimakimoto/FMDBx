@@ -116,7 +116,6 @@ static NSArray *FMXCsvTableBooleanStrings = nil;
     }
     
     NSScanner *scanner = [NSScanner localizedScannerWithString:string];
-    scanner.charactersToBeSkipped = NO;
     [scanner scanCharactersFromSet:FMXCsvTableDigitCharacterSet intoString:NULL];
     return scanner.isAtEnd;
 }
