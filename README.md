@@ -4,10 +4,6 @@
 
 An extension of [FMDB](https://github.com/ccgus/fmdb) to provide ORM and migration functionality for your iOS application.
 
-## Warnings
-
-**This software is under the development stage. The functionality is not enough.**
-
 ## Requirements
 
 * iOS 7.0
