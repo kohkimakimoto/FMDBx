@@ -18,7 +18,7 @@ You can install FMDBx via [CocoaPods](http://cocoapods.org).
 Add the following line to your Podfile.
 
 ```
-pod 'FMDBx', :git => 'https://github.com/kohkimakimoto/FMDBx.git'
+pod 'FMDBx'
 ```
 
 ## Usage
