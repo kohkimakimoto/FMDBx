@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "FMDatabase.h"
 
-
 @class FMXModelRepository;
 
 @interface FMXDatabaseConfiguration : NSObject

@@ -19,7 +19,7 @@
 
 @interface FMXDatabaseManager : NSObject
 
-+ (FMXDatabaseManager *)sharedInstance;
++ (FMXDatabaseManager *)sharedManager;
 
 - (void)registerDatabaseWithName:(NSString *)database
                             path:(NSString *)databasePath

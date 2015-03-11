@@ -10,7 +10,7 @@
 
 @implementation FMXUser
 
-- (void)schema:(FMXTableMap *)table
+- (void)tableMap:(FMXTableMap *)table
 {
     [table hasIntIncrementsColumn:@"id"];
     [table hasStringColumn:@"name"];

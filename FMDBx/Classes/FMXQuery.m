@@ -32,8 +32,8 @@
 - (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue
 {
     FMXModel *model = nil;
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
     [db open];
     FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"select * from `%@` where `%@` = ?",
@@ -50,8 +50,8 @@
 - (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
     FMXModel *model = nil;
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
     [db open];
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ limit 1",
@@ -74,8 +74,8 @@
     }
     
     FMXModel *model = nil;
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
     [db open];
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@ limit 1",
@@ -96,8 +96,8 @@
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
     NSMutableArray *models = [[NSMutableArray alloc] init];
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
     [db open];
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@",
@@ -120,8 +120,8 @@
     }
     
     NSMutableArray *models = [[NSMutableArray alloc] init];
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
     [db open];
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@",
@@ -143,8 +143,8 @@
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit
 {
     NSMutableArray *models = [[NSMutableArray alloc] init];
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
     [db open];
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@ limit %ld",
@@ -167,8 +167,8 @@
 {
     NSInteger count = 0;
     
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] databaseForModel:self.modelClass];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
     [db open];
     NSString *sql = [NSString stringWithFormat:@"select count(*) as count from `%@` where %@",
