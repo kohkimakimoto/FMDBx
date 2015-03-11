@@ -1,7 +1,5 @@
 # FMDBx
 
-[![Build Status](https://travis-ci.org/kohkimakimoto/FMDBx.svg?branch=master)](https://travis-ci.org/kohkimakimoto/FMDBx)
-
 An extension of [FMDB](https://github.com/ccgus/fmdb) to provide ORM and migration functionality for your iOS application.
 
 ## Requirements
