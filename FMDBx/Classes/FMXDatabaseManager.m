@@ -23,8 +23,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *
  *  @return shared instance
  */
-+ (FMXDatabaseManager *)sharedInstance
-{
++ (FMXDatabaseManager *)sharedManager {
     @synchronized(self) {
         if (!sharedInstance) {
             sharedInstance = [[self alloc] init];
@@ -38,8 +37,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *
  *  @return initialized instance
  */
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
         self.configurations = [[NSMutableDictionary alloc] init];
@@ -55,8 +53,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *  @param databasePath database file path
  *  @param migration    migration object
  */
--(void)registerDatabaseWithName:(NSString *)database path:(NSString *)databasePath migration:(FMXDatabaseMigration *)migration
-{
+-(void)registerDatabaseWithName:(NSString *)database path:(NSString *)databasePath migration:(FMXDatabaseMigration *)migration {
     // Register the configuration.
     FMXDatabaseConfiguration *configuration = [[FMXDatabaseConfiguration alloc] initWithDatabasePath:databasePath];
     [self.configurations setObject:configuration forKey:database];
@@ -76,8 +73,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *  @param databasePath database file path
  *  @param migration    migration object
  */
-- (void)registerDefaultDatabaseWithPath:(NSString *)databasePath migration:(FMXDatabaseMigration *)migration
-{
+- (void)registerDefaultDatabaseWithPath:(NSString *)databasePath migration:(FMXDatabaseMigration *)migration {
     [self registerDatabaseWithName:@"default" path:databasePath migration:migration];
 }
 
@@ -86,8 +82,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *
  *  @param database database name
  */
-- (void)destroyDatabase:(NSString *)database
-{
+- (void)destroyDatabase:(NSString *)database {
     NSFileManager *fm = [NSFileManager defaultManager];
     NSString *path = [[self configuration:database] databasePathInDocuments];
     if (path && [fm fileExistsAtPath:path]) {
@@ -98,8 +93,7 @@ static FMXDatabaseManager *sharedInstance = nil;
 /**
  *  Destroy default database.
  */
-- (void)destroyDefaultDatabase
-{
+- (void)destroyDefaultDatabase {
     [self destroyDatabase:@"default"];
 }
 
@@ -110,8 +104,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *
  *  @return configuration object
  */
-- (FMXDatabaseConfiguration *)configuration:(NSString *)database
-{
+- (FMXDatabaseConfiguration *)configuration:(NSString *)database {
     return [self.configurations objectForKey:database];
 }
 
@@ -120,8 +113,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *
  *  @return configuration object
  */
-- (FMXDatabaseConfiguration *)defaultConfiguration
-{
+- (FMXDatabaseConfiguration *)defaultConfiguration {
     return [self configuration:@"default"];
 }
 
@@ -132,8 +124,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *
  *  @return FMDatabase object
  */
-- (FMDatabase *)database:(NSString *)database
-{
+- (FMDatabase *)database:(NSString *)database {
     FMXDatabaseConfiguration *configuration = [self configuration:database];
     if (!configuration) {
         return nil;
@@ -141,8 +132,7 @@ static FMXDatabaseManager *sharedInstance = nil;
     return [configuration database];
 }
 
-- (FMDatabase *)databaseForModel:(Class)modelClass
-{
+- (FMDatabase *)databaseForModel:(Class)modelClass {
     return [self database:[self tableForModel:modelClass].database];
 }
 
@@ -151,8 +141,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *
  *  @return FMDatabase object
  */
-- (FMDatabase *)defaultDatabase
-{
+- (FMDatabase *)defaultDatabase {
     return [self database:@"default"];
 }
 
@@ -164,8 +153,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *  @return table map object
  */
 
-- (FMXTableMap *)tableForModel:(Class)modelClass
-{
+- (FMXTableMap *)tableForModel:(Class)modelClass {
     FMXTableMap *table = [self.tables objectForKey:NSStringFromClass(modelClass)];
     if (!table) {
         table = [[FMXTableMap alloc] init];
@@ -173,7 +161,7 @@ static FMXDatabaseManager *sharedInstance = nil;
         table.tableName = FMXDefaultTableNameFromModelName(NSStringFromClass(modelClass));
         
         // Override by model.
-        [[modelClass alloc] schema:table];
+        [[modelClass alloc] tableMap:table];
         
         // Cache the definition in the manager.
         [self.tables setObject:table forKey:NSStringFromClass(modelClass)];
@@ -188,8 +176,7 @@ static FMXDatabaseManager *sharedInstance = nil;
  *
  *  @return query object
  */
-- (FMXQuery *)queryForModel:(Class)modelClass
-{
+- (FMXQuery *)queryForModel:(Class)modelClass {
     return [[FMXQuery alloc] initWithModelClass:modelClass];
 }
 

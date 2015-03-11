@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void)schema:(FMXTableMap *)table
+- (void)tableMap:(FMXTableMap *)table
 {
     // You need to override the method at the subclass.
 }
@@ -72,7 +72,7 @@
 
 + (FMXModel *)modelWithResultSet:(FMResultSet *)rs
 {
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self];
     
     NSDictionary *columns = table.columns;
     FMXModel *model = [[self alloc] init];
@@ -113,7 +113,7 @@
 
 + (FMXModel *)modelWithValues:(NSDictionary *)values
 {
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:self];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self];
     NSDictionary *columns = table.columns;
 
     FMXModel *model = [[self alloc] init];
@@ -175,7 +175,7 @@
  */
 + (FMXQuery *)query
 {
-    return [[FMXDatabaseManager sharedInstance] queryForModel:self];
+    return [[FMXDatabaseManager sharedManager] queryForModel:self];
 }
 
 /**
@@ -207,10 +207,10 @@
     BOOL isPrivateConnection = NO;
     if (!db) {
         isPrivateConnection = YES;
-        db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:[self class]];
     }
     
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:[self class]];
     NSDictionary *columns = table.columns;
     
     NSMutableArray *fields = [[NSMutableArray alloc] init];
@@ -274,10 +274,10 @@
     BOOL isPrivateConnection = NO;
     if (!db) {
         isPrivateConnection = YES;
-        db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:[self class]];
     }
     
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:[self class]];
     if (![self valueForKey:[table columnForPrimaryKey].propertyName]) {
         return;
     }
@@ -339,10 +339,10 @@
     BOOL isPrivateConnection = NO;
     if (!db) {
         isPrivateConnection = YES;
-        db = [[FMXDatabaseManager sharedInstance] databaseForModel:[self class]];
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:[self class]];
     }
     
-    FMXTableMap *table = [[FMXDatabaseManager sharedInstance] tableForModel:[self class]];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:[self class]];
     if (![self valueForKey:[table columnForPrimaryKey].propertyName]) {
         return;
     }

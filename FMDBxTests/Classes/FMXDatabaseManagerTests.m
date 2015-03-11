@@ -20,7 +20,7 @@
 - (void)setUp
 {
     [super setUp];
-    [[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"default.sqlite"
+    [[FMXDatabaseManager sharedManager] registerDefaultDatabaseWithPath:@"default.sqlite"
                                                                migration:[[FMXTestMigration alloc] init]];
 }
 
@@ -34,10 +34,10 @@
 {
     NSFileManager *fm = [NSFileManager defaultManager];
 
-    NSString *path = [[[FMXDatabaseManager sharedInstance] defaultConfiguration] databasePathInDocuments];
+    NSString *path = [[[FMXDatabaseManager sharedManager] defaultConfiguration] databasePathInDocuments];
     XCTAssertTrue([fm fileExistsAtPath:path]);
     
-    FMDatabase *db = [[FMXDatabaseManager sharedInstance] defaultDatabase];
+    FMDatabase *db = [[FMXDatabaseManager sharedManager] defaultDatabase];
     if (db) {
         XCTAssertTrue(YES);
     } else {

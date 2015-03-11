@@ -45,7 +45,7 @@
 
 + (FMXQuery *)query;
 
-- (void)schema:(FMXTableMap *)table;
+- (void)tableMap:(FMXTableMap *)table;
 
 - (void)save;
 - (void)saveWithDatabase:(FMDatabase *)db;

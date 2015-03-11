@@ -21,13 +21,13 @@
 - (void)setUp
 {
     [super setUp];
-    [[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"default.sqlite"
+    [[FMXDatabaseManager sharedManager] registerDefaultDatabaseWithPath:@"default.sqlite"
                                                                migration:[[FMXTestMigration alloc] init]];
 }
 
 - (void)tearDown
 {
-    [[FMXDatabaseManager sharedInstance] destroyDefaultDatabase];
+    [[FMXDatabaseManager sharedManager] destroyDefaultDatabase];
     [super tearDown];
 }
 
@@ -56,8 +56,8 @@
 
 - (void)testWithMigration
 {
-    [[FMXDatabaseManager sharedInstance] destroyDefaultDatabase];
-    [[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"default.sqlite"
+    [[FMXDatabaseManager sharedManager] destroyDefaultDatabase];
+    [[FMXDatabaseManager sharedManager] registerDefaultDatabaseWithPath:@"default.sqlite"
                                                                migration:[[FMXTestMigration2 alloc] init]];
 }
 

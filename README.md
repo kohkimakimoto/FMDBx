@@ -6,8 +6,8 @@ An extension of [FMDB](https://github.com/ccgus/fmdb) to provide ORM and migrati
 
 ## Requirements
 
-* iOS 7.0
-* Xcode5
+* iOS 7.0 or later
+* Xcode5 or later
 * ARC
 
 > Note: I am testing this product on the above condition.
@@ -30,21 +30,27 @@ pod 'FMDBx'
 
 ### Database Manager
 
-Database Manager:`FMXDatabaseManager` class is a singleton instance that manages sqlite database files and FMDatabase instances connecting them.
+Database Manager:`FMXDatabaseManager` class is a singleton instance that manages sqlite database files and FMDatabase instances connecting them. You can get it the following code.
+
+```
+FMXDatabaseManager *manager = [FMXDatabaseManager sharedManager];
+```
 
 #### Register a database
 
+At first, you need to register a database that is used in your app to Database Manager.
+
 ```Objective-C
-[[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"database.sqlite" migration:nil];
+[[FMXDatabaseManager sharedManager] registerDefaultDatabaseWithPath:@"database.sqlite" migration:nil];
 ```
 
 At the above example, you don't need to place `database.sqlite` file by hand. 
-`FMXDatabaseManager` class automatically create initial empty `database.sqlite` file in the `NSDocumentDirectory`(Documents).
+`FMXDatabaseManager` class automatically create initial empty `database.sqlite` file in the `NSDocumentDirectory` if it doesn't exist.
 
 #### Get a FMDatabase instance from a registered database
 
 ```Objective-C
-FMDatabase *db = [[FMXDatabaseManager sharedInstance] defaultDatabase];
+FMDatabase *db = [[FMXDatabaseManager sharedManager] defaultDatabase];
 [db open];
 
 // your code for databse operations
@@ -80,11 +86,11 @@ Create your migration class.
     }];
 
     [self upToVersion:2 action:^(FMDatabase *db){
-        // ... schema changes for version 2       
+        // ... schema changes for version 2
     }];
 
     [self upToVersion:3 action:^(FMDatabase *db){
-        // ... schema changes for version 3       
+        // ... schema changes for version 3
     }];
 
     // ...etc
@@ -93,16 +99,16 @@ Create your migration class.
 @end
 ```
 
-Register database with an instance of migration class. It runs migration tasks.
+Register a database with an instance of migration class. It runs migration tasks.
 
 ```Objective-C
-[[FMXDatabaseManager sharedInstance] registerDefaultDatabaseWithPath:@"database.sqlite" 
+[[FMXDatabaseManager sharedManager] registerDefaultDatabaseWithPath:@"database.sqlite" 
                                                            migration:[[MyMigration alloc] init]];
 ```
 
 ### ORM
 
-It is designed as ActiveRecord.
+It is designed like ActiveRecord.
 
 #### Define a model class
 
@@ -121,12 +127,12 @@ For example, `ABCUser` model class maps `users` table at default.
 @end
 ```
 
-You need to define `schema` method like the following to map each properties with table columns.
+You need to define `tableMap` method like the following to map each properties with table columns.
 
 ```Objective-C
 @implementation ABCUser
 
-- (void)schema:(FMXTableMap *)table
+- (void)tableMap:(FMXTableMap *)table
 {
     [table hasIntIncrementsColumn:@"id"];   // defines as primary key.
     [table hasStringColumn:@"name"];
@@ -141,7 +147,7 @@ The model class needs primary key. So you need to define primary key configurati
 ```Objective-C
 [table hasIntIncrementsColumn:@"id"];
 
-// or 
+// or
 
 [table hasIntColumn:@"id" withPrimaryKey:YES];
 ```
@@ -152,7 +158,7 @@ you can specify table name like the following.
 ```Objective-C
 @implementation ABCUser
 
-- (void)schema:(FMXTableMap *)table
+- (void)tableMap:(FMXTableMap *)table
 {
     [table setTableName:@"custom_users"];
 }

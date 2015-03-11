@@ -15,8 +15,7 @@
  *  @param databasePath database path
  *  @return FMXDatabaseConfiguration instance.
  */
-- (id)initWithDatabasePath:(NSString *)databasePath
-{
+- (id)initWithDatabasePath:(NSString *)databasePath {
     self = [super init];
     if (self) {
         self.databasePath = databasePath;
@@ -41,8 +40,7 @@
  *
  *  @return FMDatabase instance.
  */
--(FMDatabase *)database
-{
+-(FMDatabase *)database {
     return [FMDatabase databaseWithPath:self.databasePathInDocuments];
 }
 
