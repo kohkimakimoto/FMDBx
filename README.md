@@ -147,7 +147,7 @@ The model class needs primary key. So you need to define primary key configurati
 ```Objective-C
 [table hasIntIncrementsColumn:@"id"];
 
-// or 
+// or
 
 [table hasIntColumn:@"id" withPrimaryKey:YES];
 ```
@@ -158,7 +158,7 @@ you can specify table name like the following.
 ```Objective-C
 @implementation ABCUser
 
-- (void)schema:(FMXTableMap *)table
+- (void)tableMap:(FMXTableMap *)table
 {
     [table setTableName:@"custom_users"];
 }
