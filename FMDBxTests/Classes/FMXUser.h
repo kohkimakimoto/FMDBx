@@ -13,8 +13,8 @@
 @property (strong, nonatomic) NSNumber *id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSNumber *age;
+@property (assign, nonatomic) BOOL isMale;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *updatedAt;
-@property (assign, nonatomic) BOOL isMale;
 
 @end

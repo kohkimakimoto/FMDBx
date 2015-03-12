@@ -6,9 +6,6 @@
 //
 
 #import "FMXModel.h"
-#import <objc/runtime.h>
-
-static const char * kClassPropertiesKey;
 
 @implementation FMXModel
 
@@ -21,8 +18,12 @@ static const char * kClassPropertiesKey;
     return self;
 }
 
++ (void)defaultTableMap:(FMXTableMap *)table {
+    // This method was intended to override at the subclass.
+}
+
 + (void)overrideTableMap:(FMXTableMap *)table {
-    // You need to override the method at the subclass.
+    // This method was intended to override at the subclass.
 }
 
 /**
@@ -371,21 +372,6 @@ static const char * kClassPropertiesKey;
         [db commit];
         [db close];
     }
-}
-
-#pragma mark - Private method
-
--(NSArray*)__properties__ {
-    //fetch the associated object
-    NSDictionary* classProperties = objc_getAssociatedObject(self.class, &kClassPropertiesKey);
-    if (classProperties) return [classProperties allValues];
-    
-    //if here, the class needs to inspect itself
-    //[self __setup__];
-    
-    //return the property list
-    classProperties = objc_getAssociatedObject(self.class, &kClassPropertiesKey);
-    return [classProperties allValues];
 }
 
 @end

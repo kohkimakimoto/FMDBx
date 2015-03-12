@@ -10,13 +10,13 @@
 
 @implementation FMXUser
 
-+ (void)overrideTableMap:(FMXTableMap *)table {
++ (void)defaultTableMap:(FMXTableMap *)table {
     [table hasIntIncrementsColumn:@"id"];
     [table hasStringColumn:@"name"];
     [table hasIntColumn:@"age"];
+    [table hasBoolColumn:@"is_male"];
     [table hasDateColumn:@"created_at"];
     [table hasDateColumn:@"updated_at"];
-    [table hasBoolColumn:@"is_male"];
 }
 
 @end

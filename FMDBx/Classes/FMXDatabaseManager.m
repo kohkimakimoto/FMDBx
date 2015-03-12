@@ -6,6 +6,7 @@
 //
 
 #import "FMXDatabaseManager.h"
+#import <objc/runtime.h>
 
 static FMXDatabaseManager *sharedInstance = nil;
 
@@ -159,6 +160,25 @@ static FMXDatabaseManager *sharedInstance = nil;
         table = [[FMXTableMap alloc] init];
         table.database = @"default";
         table.tableName = FMXDefaultTableNameFromModelName(NSStringFromClass(modelClass));
+        
+        // default table map
+        [modelClass performSelector:@selector(defaultTableMap:) withObject:table];
+        
+        /*
+        TODO: Initializing table map at runtime.
+         
+        // initializing tablemap automatically from the properties.
+        objc_property_t *properties;
+        unsigned int count;
+        int i;
+        properties = class_copyPropertyList(modelClass, &count);
+        for (i = 0; i < count; i++) {
+            objc_property_t property = properties[i];
+            NSString *propertyName = [NSString stringWithUTF8String:property_getName(property)];
+            NSString *columnName = FMXSnakeCaseFromCamelCase(propertyName);
+            NSString *propertyType = nil;
+        }
+        */
         
         // Override by model.
         [modelClass performSelector:@selector(overrideTableMap:) withObject:table];

@@ -19,6 +19,10 @@
 
 @property (assign, nonatomic) BOOL isNew;
 
++ (void)defaultTableMap:(FMXTableMap *)table;
+
++ (void)overrideTableMap:(FMXTableMap *)table;
+
 + (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue;
 
 + (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
@@ -44,8 +48,6 @@
 + (FMXModel *)createWithValues:(NSDictionary *)values database:(FMDatabase *)db;
 
 + (FMXQuery *)query;
-
-+ (void)overrideTableMap:(FMXTableMap *)table;
 
 - (void)save;
 - (void)saveWithDatabase:(FMDatabase *)db;
