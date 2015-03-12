@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSNumber *age;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *updatedAt;
+@property (assign, nonatomic) BOOL isMale;
 
 @end

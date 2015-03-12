@@ -161,7 +161,7 @@ static FMXDatabaseManager *sharedInstance = nil;
         table.tableName = FMXDefaultTableNameFromModelName(NSStringFromClass(modelClass));
         
         // Override by model.
-        [[modelClass alloc] tableMap:table];
+        [modelClass performSelector:@selector(overrideTableMap:) withObject:table];
         
         // Cache the definition in the manager.
         [self.tables setObject:table forKey:NSStringFromClass(modelClass)];

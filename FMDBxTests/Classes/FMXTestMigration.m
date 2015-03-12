@@ -18,6 +18,7 @@
          "  id integer primary key autoincrement,"
          "  name text not null,"
          "  age integer not null,"
+         "  is_male BOOL not null,"
          "  created_at integer not null,"
          "  updated_at integer not null"
          ")"

@@ -6,6 +6,9 @@
 //
 
 #import "FMXModel.h"
+#import <objc/runtime.h>
+
+static const char * kClassPropertiesKey;
 
 @implementation FMXModel
 
@@ -18,8 +21,7 @@
     return self;
 }
 
-- (void)tableMap:(FMXTableMap *)table
-{
++ (void)overrideTableMap:(FMXTableMap *)table {
     // You need to override the method at the subclass.
 }
 
@@ -99,6 +101,10 @@
         }
         
         if (value) {
+            NSString *propertyName = FMXLowerCamelCaseFromSnakeCase(column.name);
+            [model setValue:value forKey:propertyName];
+            
+            /*
             SEL selector = FMXSetterSelectorFromColumnName(column.name);
             if ([model respondsToSelector:selector]) {
 #pragma clang diagnostic push
@@ -106,6 +112,7 @@
                 [model performSelector:selector withObject:value];
 #pragma clang diagnostic pop
             }
+            */
         }
     }
     return model;
@@ -135,7 +142,7 @@
         } else if (column.type == FMXColumnMapTypeString) {
             // Nothing to do;
         } else if (column.type == FMXColumnMapTypeBool) {
-            // Nothing to do;
+            // Nothing to do;         
         } else if (column.type == FMXColumnMapTypeDate && [value isKindOfClass:[NSString class]]) {
             value = [formatter dateFromString:value];
         } else if (column.type == FMXColumnMapTypeData) {
@@ -143,6 +150,10 @@
         }
         
         if (value) {
+            NSString *propertyName = FMXLowerCamelCaseFromSnakeCase(column.name);
+            [model setValue:value forKey:propertyName];
+
+            /*
             SEL selector = FMXSetterSelectorFromColumnName(column.name);
             if ([model respondsToSelector:selector]) {
 #pragma clang diagnostic push
@@ -150,6 +161,7 @@
                 [model performSelector:selector withObject:value];
 #pragma clang diagnostic pop
             }
+            */
         }
     }
 
@@ -181,13 +193,11 @@
 /**
  *  Save
  */
-- (void)save
-{
+- (void)save {
     [self saveWithDatabase:nil];
 }
 
-- (void)saveWithDatabase:(FMDatabase *)db
-{
+- (void)saveWithDatabase:(FMDatabase *)db {
     if (self.isNew) {
         [self insertWithDatabase:db];
     } else {
@@ -198,8 +208,7 @@
 /**
  *  Insert
  */
-- (void)insertWithDatabase:(FMDatabase *)db
-{
+- (void)insertWithDatabase:(FMDatabase *)db {
     if (!self.isNew) {
         return;
     }
@@ -265,8 +274,7 @@
 /**
  *  Update
  */
-- (void)updateWithDatabase:(FMDatabase *)db
-{
+- (void)updateWithDatabase:(FMDatabase *)db {
     if (self.isNew) {
         return;
     }
@@ -363,6 +371,21 @@
         [db commit];
         [db close];
     }
+}
+
+#pragma mark - Private method
+
+-(NSArray*)__properties__ {
+    //fetch the associated object
+    NSDictionary* classProperties = objc_getAssociatedObject(self.class, &kClassPropertiesKey);
+    if (classProperties) return [classProperties allValues];
+    
+    //if here, the class needs to inspect itself
+    //[self __setup__];
+    
+    //return the property list
+    classProperties = objc_getAssociatedObject(self.class, &kClassPropertiesKey);
+    return [classProperties allValues];
 }
 
 @end

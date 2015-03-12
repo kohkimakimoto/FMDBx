@@ -45,7 +45,7 @@
 
 + (FMXQuery *)query;
 
-- (void)tableMap:(FMXTableMap *)table;
++ (void)overrideTableMap:(FMXTableMap *)table;
 
 - (void)save;
 - (void)saveWithDatabase:(FMDatabase *)db;
