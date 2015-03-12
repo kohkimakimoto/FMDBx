@@ -36,6 +36,7 @@
     FMXUser *user = [[FMXUser alloc] init];
     user.name = @"kohki makimoto";
     user.age = @(33);
+    user.isMale = YES;
     user.createdAt = [NSDate date];
     user.updatedAt = [NSDate date];
     
@@ -48,21 +49,27 @@
     FMXUser *retUser2 =(FMXUser *)[FMXUser modelByPrimaryKey:@(1)];
     XCTAssertEqualObjects(user.name, retUser2.name);
     XCTAssertEqualObjects(user.age, retUser2.age);
-
+    XCTAssertEqual(user.isMale, retUser2.isMale);
+    
     FMXUser *retUser3 =(FMXUser *)[FMXUser modelByPrimaryKey:@(1)];
     XCTAssertEqualObjects(user.name, retUser3.name);
     XCTAssertEqualObjects(user.age, retUser3.age);
+    XCTAssertEqual(user.isMale, retUser3.isMale);
 
     FMXUser *retUser4 =(FMXUser *)[FMXUser modelWhere:@"name = :name" parameters:@{@"name": @"kohki makimoto"} orderBy:@"age desc"];
     XCTAssertEqualObjects(user.name, retUser4.name);
     XCTAssertEqualObjects(user.age, retUser4.age);
+    XCTAssertEqual(user.isMale, retUser4.isMale);
     
     // update
     user.age = @(44);
+    user.isMale = NO;
+    
     [user save];
     
     FMXUser *retUser5 =(FMXUser *)[FMXUser modelByPrimaryKey:@(1)];
     XCTAssertEqualObjects(@(44), retUser5.age);
+    XCTAssertEqual(NO, retUser5.isMale);
     
     // count
     NSInteger count1 = [FMXUser count];

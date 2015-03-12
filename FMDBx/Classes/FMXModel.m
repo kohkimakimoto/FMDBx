@@ -18,9 +18,12 @@
     return self;
 }
 
-- (void)tableMap:(FMXTableMap *)table
-{
-    // You need to override the method at the subclass.
++ (void)defaultTableMap:(FMXTableMap *)table {
+    // This method was intended to override at the subclass.
+}
+
++ (void)overrideTableMap:(FMXTableMap *)table {
+    // This method was intended to override at the subclass.
 }
 
 /**
@@ -99,6 +102,10 @@
         }
         
         if (value) {
+            NSString *propertyName = FMXLowerCamelCaseFromSnakeCase(column.name);
+            [model setValue:value forKey:propertyName];
+            
+            /*
             SEL selector = FMXSetterSelectorFromColumnName(column.name);
             if ([model respondsToSelector:selector]) {
 #pragma clang diagnostic push
@@ -106,6 +113,7 @@
                 [model performSelector:selector withObject:value];
 #pragma clang diagnostic pop
             }
+            */
         }
     }
     return model;
@@ -135,7 +143,7 @@
         } else if (column.type == FMXColumnMapTypeString) {
             // Nothing to do;
         } else if (column.type == FMXColumnMapTypeBool) {
-            // Nothing to do;
+            // Nothing to do;         
         } else if (column.type == FMXColumnMapTypeDate && [value isKindOfClass:[NSString class]]) {
             value = [formatter dateFromString:value];
         } else if (column.type == FMXColumnMapTypeData) {
@@ -143,6 +151,10 @@
         }
         
         if (value) {
+            NSString *propertyName = FMXLowerCamelCaseFromSnakeCase(column.name);
+            [model setValue:value forKey:propertyName];
+
+            /*
             SEL selector = FMXSetterSelectorFromColumnName(column.name);
             if ([model respondsToSelector:selector]) {
 #pragma clang diagnostic push
@@ -150,6 +162,7 @@
                 [model performSelector:selector withObject:value];
 #pragma clang diagnostic pop
             }
+            */
         }
     }
 
@@ -181,13 +194,11 @@
 /**
  *  Save
  */
-- (void)save
-{
+- (void)save {
     [self saveWithDatabase:nil];
 }
 
-- (void)saveWithDatabase:(FMDatabase *)db
-{
+- (void)saveWithDatabase:(FMDatabase *)db {
     if (self.isNew) {
         [self insertWithDatabase:db];
     } else {
@@ -198,8 +209,7 @@
 /**
  *  Insert
  */
-- (void)insertWithDatabase:(FMDatabase *)db
-{
+- (void)insertWithDatabase:(FMDatabase *)db {
     if (!self.isNew) {
         return;
     }
@@ -265,8 +275,7 @@
 /**
  *  Update
  */
-- (void)updateWithDatabase:(FMDatabase *)db
-{
+- (void)updateWithDatabase:(FMDatabase *)db {
     if (self.isNew) {
         return;
     }

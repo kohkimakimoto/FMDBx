@@ -78,7 +78,10 @@ Create your migration class.
          "create table users ("
          "  id integer primary key autoincrement,"
          "  name text not null,"
-         "  age integer not null"
+         "  age integer not null,"
+         "  is_male BOOL not null,"
+         "  created_at integer not null,"
+         "  updated_at integer not null"
          ")"
          ];
     }];
@@ -121,6 +124,9 @@ For example, `ABCUser` model class maps `users` table at default.
 @property (strong, nonatomic) NSNumber *id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSNumber *age;
+@property (assign, nonatomic) BOOL isMale;
+@property (strong, nonatomic) NSDate *createdAt;
+@property (strong, nonatomic) NSDate *updatedAt;
 
 @end
 ```
@@ -130,11 +136,15 @@ You need to define `tableMap` method like the following to map each properties w
 ```Objective-C
 @implementation ABCUser
 
-- (void)tableMap:(FMXTableMap *)table
-{
-    [table hasIntIncrementsColumn:@"id"];   // defines as primary key.
++ (void)defaultTableMap:(FMXTableMap *)table {
+
+    [table hasIntIncrementsColumn:@"id"];   // defines as a primary key.
     [table hasStringColumn:@"name"];
     [table hasIntColumn:@"age"];
+    [table hasBoolColumn:@"is_male"];
+    [table hasDateColumn:@"created_at"];
+    [table hasDateColumn:@"updated_at"];
+
 }
 
 @end
@@ -156,7 +166,7 @@ you can specify table name like the following.
 ```Objective-C
 @implementation ABCUser
 
-- (void)tableMap:(FMXTableMap *)table
+- (void)defaultTableMap:(FMXTableMap *)table
 {
     [table setTableName:@"custom_users"];
 }
@@ -220,7 +230,7 @@ NSInteger count = [ABCUser countWhere:@"name = :name" parameters:@{@"name": @"Ko
 
 ### Import data from CSV 
 
-You can add some data in your migration task or others.
+You can add some data in your migration task or other places.
 
 ```Objective-C
 @interface MyMigration : FMXDatabaseMigration
@@ -236,7 +246,10 @@ You can add some data in your migration task or others.
          "create table users ("
          "  id integer primary key autoincrement,"
          "  name text not null,"
-         "  age integer not null"
+         "  age integer not null,"
+         "  is_male BOOL not null,"
+         "  created_at integer not null,"
+         "  updated_at integer not null"
          ")"
          ];
 
@@ -252,9 +265,13 @@ You can add some data in your migration task or others.
 CSV file is like the following. The header line is must.
 
 ```
-id,name,age
-1,Kohki Makimoto1,34
-2,Kohki Makimoto2,35
-3,Kohki Makimoto3,36
+id,name,age,is_male,created_at,updated_at
+1,Kohki Makimoto1,34,1,2010-12-01T21:35:43+0900,2010-12-01T21:35:43+0900
+2,Kohki Makimoto2,35,1,2010-12-01T21:35:43+0900,2010-12-01T21:35:43+0900
+3,Kohki Makimoto3,36,0,2010-12-01T21:35:43+0900,2010-12-01T21:35:43+0900
+4,Kohki Makimoto4,37,0,2010-12-01T21:35:43+0900,2010-12-01T21:35:43+0900
+5,Kohki Makimoto5,38,1,2010-12-01T21:35:43+0900,2010-12-01T21:35:43+0900
+6,Kohki Makimoto6,39,1,2010-12-01T21:35:43+0900,2010-12-01T21:35:43+0900
+7,Kohki Makimoto7,40,0,2010-12-01T21:35:43+0900,2010-12-01T21:35:43+0900
 ```
 
