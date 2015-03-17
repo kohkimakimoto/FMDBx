@@ -85,7 +85,10 @@
         FMXColumnMap *column = [columns objectForKey:key];
         
         id value = nil;
-        if (column.type == FMXColumnMapTypeInt) {
+        id object = [rs objectForColumnName:column.name];
+        if ([object isEqual:[NSNull null]]) {
+            value = nil;
+        } else if (column.type == FMXColumnMapTypeInt) {
             value = [NSNumber numberWithInt:[rs intForColumn:column.name]];
         } else if (column.type == FMXColumnMapTypeLong) {
             value = [NSNumber numberWithLong:[rs longForColumn:column.name]];

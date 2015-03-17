@@ -11,6 +11,7 @@
 #import "FMDBx.h"
 #import "FMXTestMigration.h"
 #import "FMXUser.h"
+#import "FMXHoge.h"
 
 @interface FMXQueryTests : XCTestCase
 
@@ -51,6 +52,20 @@
         NSLog(@"%@", user3.name);
     }
     XCTAssertEqual(10, users.count);
+}
+
+- (void)testGettingNullValue
+{
+    FMXHoge *hoge = [[FMXHoge alloc] init];
+    hoge.id = @(1);
+    [hoge save];
+    
+    FMXHoge *rHoge = (FMXHoge *)[[FMXHoge query] modelByPrimaryKey:@(1)];
+    XCTAssertEqualObjects(@(1), rHoge.id);
+    XCTAssertEqualObjects(nil, rHoge.textField);
+    XCTAssertEqualObjects(nil, rHoge.integerField);
+    XCTAssertEqualObjects(nil, rHoge.doubleField);
+    XCTAssertEqualObjects(nil, rHoge.dateField);
 }
 
 @end

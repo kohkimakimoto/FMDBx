@@ -23,6 +23,18 @@
          "  updated_at integer not null"
          ")"
          ];
+        
+        [db executeUpdate:@""
+         "create table hoges ("
+         "  id integer primary key autoincrement,"
+         "  text_field text,"
+         "  integer_field integer,"
+         "  bool_field BOOL,"
+         "  double_field double,"
+         "  date_field integer"
+         ")"
+         ];
+
     }];
 }
 

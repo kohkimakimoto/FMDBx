@@ -25,6 +25,7 @@
 		C254D2421931805B0040AE69 /* FMXDatabaseMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = C254D2391931805B0040AE69 /* FMXDatabaseMigration.m */; };
 		C254D2431931805B0040AE69 /* FMXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C254D23B1931805B0040AE69 /* FMXModel.m */; };
 		C254D24819318BCF0040AE69 /* FMXDatabaseManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C254D24719318BCF0040AE69 /* FMXDatabaseManagerTests.m */; };
+		C2563B161AB804E3005A9951 /* FMXHoge.m in Sources */ = {isa = PBXBuildFile; fileRef = C2563B151AB804E3005A9951 /* FMXHoge.m */; };
 		C25B3D9F1931904700174E72 /* FMXTestMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3D9E1931904700174E72 /* FMXTestMigration.m */; };
 		C25B3DA4193219ED00174E72 /* FMXDatabaseConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DA3193219ED00174E72 /* FMXDatabaseConfigurationTests.m */; };
 		C25B3DA619321B2D00174E72 /* FMXModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B3DA519321B2D00174E72 /* FMXModelTests.m */; };
@@ -81,6 +82,8 @@
 		C254D23A1931805B0040AE69 /* FMXModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXModel.h; sourceTree = "<group>"; };
 		C254D23B1931805B0040AE69 /* FMXModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXModel.m; sourceTree = "<group>"; };
 		C254D24719318BCF0040AE69 /* FMXDatabaseManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXDatabaseManagerTests.m; sourceTree = "<group>"; };
+		C2563B141AB804E3005A9951 /* FMXHoge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXHoge.h; sourceTree = "<group>"; };
+		C2563B151AB804E3005A9951 /* FMXHoge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXHoge.m; sourceTree = "<group>"; };
 		C25B3D9D1931904700174E72 /* FMXTestMigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXTestMigration.h; sourceTree = "<group>"; };
 		C25B3D9E1931904700174E72 /* FMXTestMigration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXTestMigration.m; sourceTree = "<group>"; };
 		C25B3DA3193219ED00174E72 /* FMXDatabaseConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXDatabaseConfigurationTests.m; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 			children = (
 				C25B3DAA19321BC600174E72 /* FMXUser.h */,
 				C25B3DAB19321BC600174E72 /* FMXUser.m */,
+				C2563B141AB804E3005A9951 /* FMXHoge.h */,
+				C2563B151AB804E3005A9951 /* FMXHoge.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C254D24819318BCF0040AE69 /* FMXDatabaseManagerTests.m in Sources */,
+				C2563B161AB804E3005A9951 /* FMXHoge.m in Sources */,
 				C25B3DA619321B2D00174E72 /* FMXModelTests.m in Sources */,
 				C293532419456A18003D2E6B /* FMXCsvTableTests.m in Sources */,
 				C25B3DA4193219ED00174E72 /* FMXDatabaseConfigurationTests.m in Sources */,
