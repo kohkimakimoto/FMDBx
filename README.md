@@ -42,7 +42,7 @@ At first, you need to register a database that is used in your app to Database M
 [[FMXDatabaseManager sharedManager] registerDefaultDatabaseWithPath:@"database.sqlite" migration:nil];
 ```
 
-At the above example, you don't need to place `database.sqlite` file by hand. 
+At the above example, you don't need to place `database.sqlite` file by hand.
 `FMXDatabaseManager` class automatically create initial empty `database.sqlite` file in the `NSDocumentDirectory` if it doesn't exist.
 
 #### Get a FMDatabase instance from a registered database
@@ -131,7 +131,7 @@ For example, `ABCUser` model class maps `users` table at default.
 @end
 ```
 
-You need to define `tableMap` method like the following to map each properties with table columns.
+You need to define `defaultTableMap` method like the following to map each properties with table columns.
 
 ```Objective-C
 @implementation ABCUser
