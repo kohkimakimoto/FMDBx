@@ -63,6 +63,10 @@
     return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy limit:limit];
 }
 
++ (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit offset:(NSInteger)offset {
+    return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy limit:limit offset:offset];
+}
+
 + (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
     return [[self query] countWhere:conditions parameters:parameters];

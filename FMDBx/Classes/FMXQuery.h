@@ -28,6 +28,8 @@
 
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit;
 
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit offset:(NSInteger)offset;
+
 - (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters;
 
 @end
