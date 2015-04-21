@@ -139,7 +139,6 @@
     return models;
 }
 
-
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit
 {
     NSMutableArray *models = [[NSMutableArray alloc] init];
@@ -152,6 +151,30 @@
                      [self validatedConditionsString:conditions],
                      orderBy,
                      (long)limit
+                     ];
+    FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
+    
+    while ([rs next]) {
+        [models addObject:[self.modelClass modelWithResultSet:rs]];
+    }
+    [db close];
+    
+    return models;
+}
+
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit offset:(NSInteger)offset
+{
+    NSMutableArray *models = [[NSMutableArray alloc] init];
+    FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
+    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
+    
+    [db open];
+    NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@ limit %ld offset %ld",
+                     table.tableName,
+                     [self validatedConditionsString:conditions],
+                     orderBy,
+                     (long)limit,
+                     (long)offset
                      ];
     FMResultSet *rs = [db executeQuery:sql withParameterDictionary:parameters];
     

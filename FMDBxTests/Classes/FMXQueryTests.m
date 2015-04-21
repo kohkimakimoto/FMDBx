@@ -52,6 +52,9 @@
         NSLog(@"%@", user3.name);
     }
     XCTAssertEqual(10, users.count);
+    
+    NSArray *users2 = [[FMXUser query] modelsWhere:nil parameters:nil orderBy:@"id desc" limit:2 offset:1];
+    XCTAssertEqual(2, users2.count);
 }
 
 - (void)testGettingNullValue
