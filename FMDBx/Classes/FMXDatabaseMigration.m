@@ -106,7 +106,7 @@
     
     FMDatabase *db = [self.configuration database];
     [db open];
-    [db beginTransaction];
+    [db beginDeferredTransaction];
 
     NSLog(@"[FMDBx] Migrating to %d", version);
     action(db);
