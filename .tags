@@ -1,0 +1,324 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+language	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/.travis.yml	/^language: objective-c$/;"	function	line:1
+language	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/.travis.yml	/^language: objective-c$/;"	function	line:1
+env	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/.travis.yml	/^env: LC_CTYPE=en_US.UTF-8$/;"	function	line:2
+env	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/.travis.yml	/^env: LC_CTYPE=en_US.UTF-8$/;"	function	line:2
+before_install	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/.travis.yml	/^before_install:  $/;"	function	line:3
+before_install	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/.travis.yml	/^before_install:  $/;"	function	line:3
+script	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/.travis.yml	/^script:$/;"	function	line:6
+script	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/.travis.yml	/^script:$/;"	function	line:6
+NS_ENUM	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXColumnMap.h	/^typedef NS_ENUM(NSInteger, FMXColumnMapType) {$/;"	function	line:10	signature:(NSInteger, FMXColumnMapType)
+name	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXColumnMap.h	/^@property (strong, nonatomic) NSString *name;$/;"	variable	line:24
+type	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXColumnMap.h	/^@property (assign, nonatomic) FMXColumnMapType type;$/;"	variable	line:25
+increments	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXColumnMap.h	/^@property (assign, nonatomic) BOOL increments;$/;"	variable	line:26
+databasePath	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXDatabaseConfiguration.h	/^@property (strong, nonatomic) NSString *databasePath;$/;"	variable	line:15
+databasePathInDocuments	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXDatabaseConfiguration.h	/^@property (strong, nonatomic) NSString *databasePathInDocuments;$/;"	variable	line:16
+versionTable	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXDatabaseMigration.h	/^@property (strong, nonatomic) NSString *versionTable;$/;"	variable	line:16
+configuration	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXDatabaseMigration.h	/^@property (strong, nonatomic) FMXDatabaseConfiguration *configuration;$/;"	variable	line:17
+currentVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXDatabaseMigration.h	/^@property (assign, nonatomic) int currentVersion;$/;"	variable	line:18
+isNew	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXModel.h	/^@property (assign, nonatomic) BOOL isNew;$/;"	variable	line:20
+count	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXModel.h	/^+ (NSInteger)count;$/;"	variable	line:67
+query	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXModel.h	/^+ (FMXQuery *)query;$/;"	variable	line:75
+modelClass	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXQuery.h	/^@property (assign, nonatomic, readonly) Class modelClass;$/;"	variable	line:15
+database	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXTableMap.h	/^@property (strong, nonatomic) NSString *database;$/;"	variable	line:13
+tableName	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXTableMap.h	/^@property (strong, nonatomic) NSString *tableName;$/;"	variable	line:14
+columns	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXTableMap.h	/^@property (strong, nonatomic) NSMutableDictionary *columns;$/;"	variable	line:15
+primaryKeyName	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Classes/FMXTableMap.h	/^@property (strong, nonatomic) NSString *primaryKeyName;$/;"	variable	line:16
+window	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/FMXAppDelegate.h	/^@property (strong, nonatomic) UIWindow *window;$/;"	variable	line:13
+images	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^  "images" : [$/;"	function	line:2
+images	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^  "images" : [$/;"	function	line:2
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:4
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:4
+size	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "29x29",$/;"	function	line:5
+size	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "29x29",$/;"	function	line:5
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "2x"$/;"	function	line:6
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "2x"$/;"	function	line:6
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:9
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:9
+size	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "40x40",$/;"	function	line:10
+size	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "40x40",$/;"	function	line:10
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "2x"$/;"	function	line:11
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "2x"$/;"	function	line:11
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:14
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:14
+size	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "60x60",$/;"	function	line:15
+size	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "size" : "60x60",$/;"	function	line:15
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "2x"$/;"	function	line:16
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^      "scale" : "2x"$/;"	function	line:16
+info	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^  "info" : {$/;"	function	line:19
+info	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^  "info" : {$/;"	function	line:19
+version	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^    "version" : 1,$/;"	function	line:20
+version	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^    "version" : 1,$/;"	function	line:20
+author	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^    "author" : "xcode"$/;"	function	line:21
+author	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/AppIcon.appiconset/Contents.json	/^    "author" : "xcode"$/;"	function	line:21
+images	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^  "images" : [$/;"	function	line:2
+images	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^  "images" : [$/;"	function	line:2
+orientation	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "orientation" : "portrait",$/;"	function	line:4
+orientation	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "orientation" : "portrait",$/;"	function	line:4
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:5
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:5
+extent	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "extent" : "full-screen",$/;"	function	line:6
+extent	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "extent" : "full-screen",$/;"	function	line:6
+minimum-system-version	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "minimum-system-version" : "7.0",$/;"	function	line:7
+minimum-system-version	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "minimum-system-version" : "7.0",$/;"	function	line:7
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "scale" : "2x"$/;"	function	line:8
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "scale" : "2x"$/;"	function	line:8
+orientation	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "orientation" : "portrait",$/;"	function	line:11
+orientation	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "orientation" : "portrait",$/;"	function	line:11
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:12
+idiom	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "idiom" : "iphone",$/;"	function	line:12
+subtype	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "subtype" : "retina4",$/;"	function	line:13
+subtype	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "subtype" : "retina4",$/;"	function	line:13
+extent	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "extent" : "full-screen",$/;"	function	line:14
+extent	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "extent" : "full-screen",$/;"	function	line:14
+minimum-system-version	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "minimum-system-version" : "7.0",$/;"	function	line:15
+minimum-system-version	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "minimum-system-version" : "7.0",$/;"	function	line:15
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "scale" : "2x"$/;"	function	line:16
+scale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^      "scale" : "2x"$/;"	function	line:16
+info	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^  "info" : {$/;"	function	line:19
+info	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^  "info" : {$/;"	function	line:19
+version	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^    "version" : 1,$/;"	function	line:20
+version	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^    "version" : 1,$/;"	function	line:20
+author	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^    "author" : "xcode"$/;"	function	line:21
+author	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBx/Images.xcassets/LaunchImage.launchimage/Contents.json	/^    "author" : "xcode"$/;"	function	line:21
+id	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXHoge.h	/^@property (strong, nonatomic) NSNumber *id;$/;"	variable	line:13
+textField	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXHoge.h	/^@property (strong, nonatomic) NSString *textField;$/;"	variable	line:14
+integerField	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXHoge.h	/^@property (strong, nonatomic) NSNumber *integerField;$/;"	variable	line:15
+doubleField	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXHoge.h	/^@property (strong, nonatomic) NSNumber *doubleField;$/;"	variable	line:16
+boolField	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXHoge.h	/^@property (assign, nonatomic) BOOL boolField;$/;"	variable	line:17
+dateField	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXHoge.h	/^@property (strong, nonatomic) NSDate *dateField;$/;"	variable	line:18
+id	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXUser.h	/^@property (strong, nonatomic) NSNumber *id;$/;"	variable	line:13
+name	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXUser.h	/^@property (strong, nonatomic) NSString *name;$/;"	variable	line:14
+age	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXUser.h	/^@property (strong, nonatomic) NSNumber *age;$/;"	variable	line:15
+isMale	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXUser.h	/^@property (assign, nonatomic) BOOL isMale;$/;"	variable	line:16
+createdAt	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXUser.h	/^@property (strong, nonatomic) NSDate *createdAt;$/;"	variable	line:17
+updatedAt	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/FMDBxTests/Classes/FMXUser.h	/^@property (strong, nonatomic) NSDate *updatedAt;$/;"	variable	line:18
+FMDBAutorelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBAutorelease(/;"	macro	line:8
+FMDBReturnAutoreleased	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBReturnAutoreleased /;"	macro	line:9
+FMDBRetain	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBRetain(/;"	macro	line:11
+FMDBReturnRetained	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBReturnRetained /;"	macro	line:12
+FMDBRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBRelease(/;"	macro	line:14
+FMDBDispatchQueueRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBDispatchQueueRelease(/;"	macro	line:16
+FMDBAutorelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBAutorelease(/;"	macro	line:19
+FMDBReturnAutoreleased	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBReturnAutoreleased(/;"	macro	line:20
+FMDBRetain	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBRetain(/;"	macro	line:22
+FMDBReturnRetained	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBReturnRetained(/;"	macro	line:23
+FMDBRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define FMDBRelease(/;"	macro	line:25
+FMDBDispatchQueueRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^        #define FMDBDispatchQueueRelease(/;"	macro	line:31
+FMDBDispatchQueueRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^        #define FMDBDispatchQueueRelease(/;"	macro	line:33
+instancetype	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^    #define instancetype /;"	macro	line:38
+resultsDictionary	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary);$/;"	variable	line:42
+traceExecution	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL traceExecution;$/;"	variable	line:97
+checkedOut	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL checkedOut;$/;"	variable	line:101
+crashOnErrors	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL crashOnErrors;$/;"	variable	line:105
+logsErrors	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL logsErrors;$/;"	variable	line:109
+cachedStatements	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^@property (atomic, retain) NSMutableDictionary *cachedStatements;$/;"	variable	line:113
+isSQLiteThreadSafe	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^+ (BOOL)isSQLiteThreadSafe;$/;"	variable	line:846
+sqliteLibVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^+ (NSString*)sqliteLibVersion;$/;"	variable	line:855
+FMDBUserVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^+ (NSString*)FMDBUserVersion;$/;"	variable	line:858
+FMDBVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^+ (SInt32)FMDBVersion;$/;"	variable	line:860
+useCount	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^@property (atomic, assign) long useCount;$/;"	variable	line:1027
+query	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^@property (atomic, retain) NSString *query;$/;"	variable	line:1031
+statement	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^@property (atomic, assign) sqlite3_stmt *statement;$/;"	variable	line:1038
+inUse	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL inUse;$/;"	variable	line:1042
+path	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabasePool.h	/^@property (atomic, retain) NSString *path;$/;"	variable	line:48
+delegate	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabasePool.h	/^@property (atomic, assign) id delegate;$/;"	variable	line:52
+maximumNumberOfDatabasesToCreate	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabasePool.h	/^@property (atomic, assign) NSUInteger maximumNumberOfDatabasesToCreate;$/;"	variable	line:56
+openFlags	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabasePool.h	/^@property (atomic, readonly) int openFlags;$/;"	variable	line:60
+path	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabaseQueue.h	/^@property (atomic, retain) NSString *path;$/;"	variable	line:73
+openFlags	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabaseQueue.h	/^@property (atomic, readonly) int openFlags;$/;"	variable	line:77
+databaseClass	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMDatabaseQueue.h	/^+ (Class)databaseClass;$/;"	variable	line:127
+__has_feature	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMResultSet.h	/^#define __has_feature(/;"	macro	line:5
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMResultSet.h	/^#define NS_RETURNS_NOT_RETAINED /;"	macro	line:10
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMResultSet.h	/^#define NS_RETURNS_NOT_RETAINED$/;"	macro	line:12
+query	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMResultSet.h	/^@property (atomic, retain) NSString *query;$/;"	variable	line:40
+columnNameToIndexMap	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMResultSet.h	/^@property (readonly) NSMutableDictionary *columnNameToIndexMap;$/;"	variable	line:44
+statement	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMResultSet.h	/^@property (atomic, retain) FMStatement *statement;$/;"	variable	line:48
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMResultSet.h	/^- (NSData*)dataNoCopyForColumn:(NSString*)columnName NS_RETURNS_NOT_RETAINED;$/;"	variable	line:389
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/BuildHeaders/FMDB/FMResultSet.h	/^- (NSData*)dataNoCopyForColumnIndex:(int)columnIdx NS_RETURNS_NOT_RETAINED;$/;"	variable	line:403
+FMDB v2.3	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^# FMDB v2.3$/;"	function	line:1
+FMDB v2.3	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^# FMDB v2.3$/;"	function	line:1
+The FMDB Mailing List:	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## The FMDB Mailing List:$/;"	function	line:4
+The FMDB Mailing List:	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## The FMDB Mailing List:$/;"	function	line:4
+Read the SQLite FAQ:	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Read the SQLite FAQ:$/;"	function	line:7
+Read the SQLite FAQ:	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Read the SQLite FAQ:$/;"	function	line:7
+CocoaPods	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## CocoaPods$/;"	function	line:12
+CocoaPods	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## CocoaPods$/;"	function	line:12
+pod 'FMDB/SQLCipher'	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^# pod 'FMDB\/SQLCipher'   # If using FMDB with SQLCipher$/;"	function	line:18
+pod 'FMDB/SQLCipher'	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^# pod 'FMDB\/SQLCipher'   # If using FMDB with SQLCipher$/;"	function	line:18
+FMDB Class Reference:	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## FMDB Class Reference:$/;"	function	line:23
+FMDB Class Reference:	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## FMDB Class Reference:$/;"	function	line:23
+Automatic Reference Counting (ARC) or Manual Memory Management?	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Automatic Reference Counting (ARC) or Manual Memory Management?$/;"	function	line:26
+Automatic Reference Counting (ARC) or Manual Memory Management?	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Automatic Reference Counting (ARC) or Manual Memory Management?$/;"	function	line:26
+Usage	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Usage$/;"	function	line:29
+Usage	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Usage$/;"	function	line:29
+Database Creation	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Database Creation$/;"	function	line:36
+Database Creation	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Database Creation$/;"	function	line:36
+Opening	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Opening$/;"	function	line:47
+Opening	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Opening$/;"	function	line:47
+Executing Updates	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Executing Updates$/;"	function	line:56
+Executing Updates	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Executing Updates$/;"	function	line:56
+Executing Queries	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Executing Queries$/;"	function	line:62
+Executing Queries	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Executing Queries$/;"	function	line:62
+Closing	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Closing$/;"	function	line:100
+Closing	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Closing$/;"	function	line:100
+Transactions	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Transactions$/;"	function	line:106
+Transactions	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Transactions$/;"	function	line:106
+Multiple Statements and Batch Stuff	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Multiple Statements and Batch Stuff$/;"	function	line:110
+Multiple Statements and Batch Stuff	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Multiple Statements and Batch Stuff$/;"	function	line:110
+Data Sanitization	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Data Sanitization$/;"	function	line:136
+Data Sanitization	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^### Data Sanitization$/;"	function	line:136
+Making custom sqlite functions, based on blocks.	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Making custom sqlite functions, based on blocks.$/;"	function	line:221
+Making custom sqlite functions, based on blocks.	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Making custom sqlite functions, based on blocks.$/;"	function	line:221
+History	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## History$/;"	function	line:225
+History	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## History$/;"	function	line:225
+Contributors	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Contributors$/;"	function	line:229
+Contributors	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Contributors$/;"	function	line:229
+Reporting bugs	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Reporting bugs$/;"	function	line:233
+Reporting bugs	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## Reporting bugs$/;"	function	line:233
+License	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## License$/;"	function	line:251
+License	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/README.markdown	/^## License$/;"	function	line:251
+FMDBAutorelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBAutorelease(/;"	macro	line:8
+FMDBReturnAutoreleased	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBReturnAutoreleased /;"	macro	line:9
+FMDBRetain	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBRetain(/;"	macro	line:11
+FMDBReturnRetained	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBReturnRetained /;"	macro	line:12
+FMDBRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBRelease(/;"	macro	line:14
+FMDBDispatchQueueRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBDispatchQueueRelease(/;"	macro	line:16
+FMDBAutorelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBAutorelease(/;"	macro	line:19
+FMDBReturnAutoreleased	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBReturnAutoreleased(/;"	macro	line:20
+FMDBRetain	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBRetain(/;"	macro	line:22
+FMDBReturnRetained	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBReturnRetained(/;"	macro	line:23
+FMDBRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define FMDBRelease(/;"	macro	line:25
+FMDBDispatchQueueRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^        #define FMDBDispatchQueueRelease(/;"	macro	line:31
+FMDBDispatchQueueRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^        #define FMDBDispatchQueueRelease(/;"	macro	line:33
+instancetype	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^    #define instancetype /;"	macro	line:38
+resultsDictionary	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary);$/;"	variable	line:42
+traceExecution	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^@property (atomic, assign) BOOL traceExecution;$/;"	variable	line:97
+checkedOut	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^@property (atomic, assign) BOOL checkedOut;$/;"	variable	line:101
+crashOnErrors	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^@property (atomic, assign) BOOL crashOnErrors;$/;"	variable	line:105
+logsErrors	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^@property (atomic, assign) BOOL logsErrors;$/;"	variable	line:109
+cachedStatements	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^@property (atomic, retain) NSMutableDictionary *cachedStatements;$/;"	variable	line:113
+isSQLiteThreadSafe	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^+ (BOOL)isSQLiteThreadSafe;$/;"	variable	line:846
+sqliteLibVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^+ (NSString*)sqliteLibVersion;$/;"	variable	line:855
+FMDBUserVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^+ (NSString*)FMDBUserVersion;$/;"	variable	line:858
+FMDBVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^+ (SInt32)FMDBVersion;$/;"	variable	line:860
+useCount	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^@property (atomic, assign) long useCount;$/;"	variable	line:1027
+query	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^@property (atomic, retain) NSString *query;$/;"	variable	line:1031
+statement	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^@property (atomic, assign) sqlite3_stmt *statement;$/;"	variable	line:1038
+inUse	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabase.h	/^@property (atomic, assign) BOOL inUse;$/;"	variable	line:1042
+path	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabasePool.h	/^@property (atomic, retain) NSString *path;$/;"	variable	line:48
+delegate	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabasePool.h	/^@property (atomic, assign) id delegate;$/;"	variable	line:52
+maximumNumberOfDatabasesToCreate	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabasePool.h	/^@property (atomic, assign) NSUInteger maximumNumberOfDatabasesToCreate;$/;"	variable	line:56
+openFlags	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabasePool.h	/^@property (atomic, readonly) int openFlags;$/;"	variable	line:60
+path	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabaseQueue.h	/^@property (atomic, retain) NSString *path;$/;"	variable	line:73
+openFlags	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabaseQueue.h	/^@property (atomic, readonly) int openFlags;$/;"	variable	line:77
+databaseClass	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMDatabaseQueue.h	/^+ (Class)databaseClass;$/;"	variable	line:127
+__has_feature	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMResultSet.h	/^#define __has_feature(/;"	macro	line:5
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMResultSet.h	/^#define NS_RETURNS_NOT_RETAINED /;"	macro	line:10
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMResultSet.h	/^#define NS_RETURNS_NOT_RETAINED$/;"	macro	line:12
+query	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMResultSet.h	/^@property (atomic, retain) NSString *query;$/;"	variable	line:40
+columnNameToIndexMap	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMResultSet.h	/^@property (readonly) NSMutableDictionary *columnNameToIndexMap;$/;"	variable	line:44
+statement	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMResultSet.h	/^@property (atomic, retain) FMStatement *statement;$/;"	variable	line:48
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMResultSet.h	/^- (NSData*)dataNoCopyForColumn:(NSString*)columnName NS_RETURNS_NOT_RETAINED;$/;"	variable	line:389
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/FMDB/src/fmdb/FMResultSet.h	/^- (NSData*)dataNoCopyForColumnIndex:(int)columnIdx NS_RETURNS_NOT_RETAINED;$/;"	variable	line:403
+FMDBAutorelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBAutorelease(/;"	macro	line:8
+FMDBReturnAutoreleased	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBReturnAutoreleased /;"	macro	line:9
+FMDBRetain	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBRetain(/;"	macro	line:11
+FMDBReturnRetained	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBReturnRetained /;"	macro	line:12
+FMDBRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBRelease(/;"	macro	line:14
+FMDBDispatchQueueRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBDispatchQueueRelease(/;"	macro	line:16
+FMDBAutorelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBAutorelease(/;"	macro	line:19
+FMDBReturnAutoreleased	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBReturnAutoreleased(/;"	macro	line:20
+FMDBRetain	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBRetain(/;"	macro	line:22
+FMDBReturnRetained	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBReturnRetained(/;"	macro	line:23
+FMDBRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define FMDBRelease(/;"	macro	line:25
+FMDBDispatchQueueRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^        #define FMDBDispatchQueueRelease(/;"	macro	line:31
+FMDBDispatchQueueRelease	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^        #define FMDBDispatchQueueRelease(/;"	macro	line:33
+instancetype	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^    #define instancetype /;"	macro	line:38
+resultsDictionary	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary);$/;"	variable	line:42
+traceExecution	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL traceExecution;$/;"	variable	line:97
+checkedOut	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL checkedOut;$/;"	variable	line:101
+crashOnErrors	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL crashOnErrors;$/;"	variable	line:105
+logsErrors	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL logsErrors;$/;"	variable	line:109
+cachedStatements	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^@property (atomic, retain) NSMutableDictionary *cachedStatements;$/;"	variable	line:113
+isSQLiteThreadSafe	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^+ (BOOL)isSQLiteThreadSafe;$/;"	variable	line:846
+sqliteLibVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^+ (NSString*)sqliteLibVersion;$/;"	variable	line:855
+FMDBUserVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^+ (NSString*)FMDBUserVersion;$/;"	variable	line:858
+FMDBVersion	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^+ (SInt32)FMDBVersion;$/;"	variable	line:860
+useCount	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^@property (atomic, assign) long useCount;$/;"	variable	line:1027
+query	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^@property (atomic, retain) NSString *query;$/;"	variable	line:1031
+statement	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^@property (atomic, assign) sqlite3_stmt *statement;$/;"	variable	line:1038
+inUse	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabase.h	/^@property (atomic, assign) BOOL inUse;$/;"	variable	line:1042
+path	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabasePool.h	/^@property (atomic, retain) NSString *path;$/;"	variable	line:48
+delegate	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabasePool.h	/^@property (atomic, assign) id delegate;$/;"	variable	line:52
+maximumNumberOfDatabasesToCreate	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabasePool.h	/^@property (atomic, assign) NSUInteger maximumNumberOfDatabasesToCreate;$/;"	variable	line:56
+openFlags	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabasePool.h	/^@property (atomic, readonly) int openFlags;$/;"	variable	line:60
+path	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabaseQueue.h	/^@property (atomic, retain) NSString *path;$/;"	variable	line:73
+openFlags	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabaseQueue.h	/^@property (atomic, readonly) int openFlags;$/;"	variable	line:77
+databaseClass	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMDatabaseQueue.h	/^+ (Class)databaseClass;$/;"	variable	line:127
+__has_feature	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMResultSet.h	/^#define __has_feature(/;"	macro	line:5
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMResultSet.h	/^#define NS_RETURNS_NOT_RETAINED /;"	macro	line:10
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMResultSet.h	/^#define NS_RETURNS_NOT_RETAINED$/;"	macro	line:12
+query	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMResultSet.h	/^@property (atomic, retain) NSString *query;$/;"	variable	line:40
+columnNameToIndexMap	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMResultSet.h	/^@property (readonly) NSMutableDictionary *columnNameToIndexMap;$/;"	variable	line:44
+statement	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMResultSet.h	/^@property (atomic, retain) FMStatement *statement;$/;"	variable	line:48
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMResultSet.h	/^- (NSData*)dataNoCopyForColumn:(NSString*)columnName NS_RETURNS_NOT_RETAINED;$/;"	variable	line:389
+NS_RETURNS_NOT_RETAINED	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Headers/FMDB/FMResultSet.h	/^- (NSData*)dataNoCopyForColumnIndex:(int)columnIdx NS_RETURNS_NOT_RETAINED;$/;"	variable	line:403
+Acknowledgements	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-acknowledgements.markdown	/^# Acknowledgements$/;"	function	line:1
+Acknowledgements	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-acknowledgements.markdown	/^# Acknowledgements$/;"	function	line:1
+FMDB	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-acknowledgements.markdown	/^## FMDB$/;"	function	line:4
+FMDB	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-acknowledgements.markdown	/^## FMDB$/;"	function	line:4
+COCOAPODS_POD_AVAILABLE_FMDB	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_POD_AVAILABLE_FMDB$/;"	macro	line:10
+COCOAPODS_VERSION_MAJOR_FMDB	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_VERSION_MAJOR_FMDB /;"	macro	line:11
+COCOAPODS_VERSION_MINOR_FMDB	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_VERSION_MINOR_FMDB /;"	macro	line:12
+COCOAPODS_VERSION_PATCH_FMDB	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_VERSION_PATCH_FMDB /;"	macro	line:13
+COCOAPODS_POD_AVAILABLE_FMDB_common	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_POD_AVAILABLE_FMDB_common$/;"	macro	line:16
+COCOAPODS_VERSION_MAJOR_FMDB_common	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_VERSION_MAJOR_FMDB_common /;"	macro	line:17
+COCOAPODS_VERSION_MINOR_FMDB_common	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_VERSION_MINOR_FMDB_common /;"	macro	line:18
+COCOAPODS_VERSION_PATCH_FMDB_common	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_VERSION_PATCH_FMDB_common /;"	macro	line:19
+COCOAPODS_POD_AVAILABLE_FMDB_standard	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_POD_AVAILABLE_FMDB_standard$/;"	macro	line:22
+COCOAPODS_VERSION_MAJOR_FMDB_standard	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_VERSION_MAJOR_FMDB_standard /;"	macro	line:23
+COCOAPODS_VERSION_MINOR_FMDB_standard	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_VERSION_MINOR_FMDB_standard /;"	macro	line:24
+COCOAPODS_VERSION_PATCH_FMDB_standard	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-environment.h	/^#define COCOAPODS_VERSION_PATCH_FMDB_standard /;"	macro	line:25
+install_resource	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/Pods/Pods-resources.sh	/^install_resource()$/;"	function	line:7
+FMDBx	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^# FMDBx$/;"	function	line:1
+FMDBx	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^# FMDBx$/;"	function	line:1
+Requirements	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^## Requirements$/;"	function	line:5
+Requirements	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^## Requirements$/;"	function	line:5
+Installation	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^## Installation$/;"	function	line:13
+Installation	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^## Installation$/;"	function	line:13
+Usage	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^## Usage$/;"	function	line:22
+Usage	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^## Usage$/;"	function	line:22
+Database Manager	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^### Database Manager$/;"	function	line:29
+Database Manager	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^### Database Manager$/;"	function	line:29
+Register a database	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Register a database$/;"	function	line:37
+Register a database	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Register a database$/;"	function	line:37
+Get a FMDatabase instance from a registered database	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Get a FMDatabase instance from a registered database$/;"	function	line:48
+Get a FMDatabase instance from a registered database	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Get a FMDatabase instance from a registered database$/;"	function	line:48
+Migration	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^### Migration$/;"	function	line:59
+Migration	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^### Migration$/;"	function	line:59
+Register a database with a migration class	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Register a database with a migration class$/;"	function	line:63
+Register a database with a migration class	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Register a database with a migration class$/;"	function	line:63
+ORM	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^### ORM$/;"	function	line:110
+ORM	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^### ORM$/;"	function	line:110
+Define a model class	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Define a model class$/;"	function	line:114
+Define a model class	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Define a model class$/;"	function	line:114
+Insert, update and delete	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Insert, update and delete$/;"	function	line:177
+Insert, update and delete	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Insert, update and delete$/;"	function	line:177
+Find by primary key	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Find by primary key$/;"	function	line:197
+Find by primary key	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Find by primary key$/;"	function	line:197
+Find by where conditions	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Find by where conditions$/;"	function	line:204
+Find by where conditions	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Find by where conditions$/;"	function	line:204
+Count records by where conditions	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Count records by where conditions$/;"	function	line:221
+Count records by where conditions	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^#### Count records by where conditions$/;"	function	line:221
+Count all users.	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^# Count all users.$/;"	function	line:224
+Count all users.	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^# Count all users.$/;"	function	line:224
+Count users whose name is 'Kohki Makimoto'.	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^# Count users whose name is 'Kohki Makimoto'.$/;"	function	line:227
+Count users whose name is 'Kohki Makimoto'.	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^# Count users whose name is 'Kohki Makimoto'.$/;"	function	line:227
+Import data from CSV	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^### Import data from CSV $/;"	function	line:231
+Import data from CSV	/Users/kohkimakimoto/src/github.com/kohkimakimoto/FMDBx/README.md	/^### Import data from CSV $/;"	function	line:231
