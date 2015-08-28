@@ -31,29 +31,52 @@
 
 - (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue
 {
+    return [self modelByPrimaryKey:primaryKeyValue database:nil];
+}
+
+- (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue database:(FMDatabase *)db
+{
     FMXModel *model = nil;
     FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
-    [db open];
+    BOOL isPrivateConnection = NO;
+    if (!db) {
+        isPrivateConnection = YES;
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
+        [db open];
+    }
+
     FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"select * from `%@` where `%@` = ?",
                                         table.tableName,
                                         table.primaryKeyName], primaryKeyValue];
     if ([rs next]) {
         model = [self.modelClass modelWithResultSet:rs];
     }
-    [db close];
+    
+    if (isPrivateConnection) {
+        [db close];
+    }
     
     return model;
 }
 
 - (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
+    return [self modelWhere:conditions parameters:parameters database:nil];
+}
+
+- (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters database:(FMDatabase *)db
+{
     FMXModel *model = nil;
     FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
-    [db open];
+    BOOL isPrivateConnection = NO;
+    if (!db) {
+        isPrivateConnection = YES;
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
+        [db open];
+    }
+    
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ limit 1",
                      table.tableName,
                      [self validatedConditionsString:conditions]];
@@ -62,12 +85,19 @@
     if ([rs next]) {
         model = [self.modelClass modelWithResultSet:rs];
     }
-    [db close];
+    
+    if (isPrivateConnection) {
+        [db close];
+    }
     
     return model;
 }
-
 - (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy
+{
+    return [self modelWhere:conditions parameters:parameters orderBy:orderBy database:nil];
+}
+
+- (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy database:(FMDatabase *)db
 {
     if (orderBy == nil) {
         return [self modelWhere:conditions parameters:parameters];
@@ -75,9 +105,14 @@
     
     FMXModel *model = nil;
     FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
     
-    [db open];
+    BOOL isPrivateConnection = NO;
+    if (!db) {
+        isPrivateConnection = YES;
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
+        [db open];
+    }
+    
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@ limit 1",
                      table.tableName,
                      [self validatedConditionsString:conditions],
@@ -88,18 +123,30 @@
     if ([rs next]) {
         model = [self.modelClass modelWithResultSet:rs];
     }
-    [db close];
+    
+    if (isPrivateConnection) {
+        [db close];
+    }
     
     return model;
 }
 
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
+    return [self modelsWhere:conditions parameters:parameters database:nil];
+}
+
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters database:(FMDatabase *)db
+{
     NSMutableArray *models = [[NSMutableArray alloc] init];
     FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
-    
-    [db open];
+    BOOL isPrivateConnection = NO;
+    if (!db) {
+        isPrivateConnection = YES;
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
+        [db open];
+    }
+
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@",
                      table.tableName,
                      [self validatedConditionsString:conditions]];
@@ -108,12 +155,20 @@
     while ([rs next]) {
         [models addObject:[self.modelClass modelWithResultSet:rs]];
     }
-    [db close];
+
+    if (isPrivateConnection) {
+        [db close];
+    }
     
     return models;
 }
 
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy
+{
+    return [self modelsWhere:conditions parameters:parameters orderBy:orderBy database:nil];
+}
+
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy database:(FMDatabase *)db
 {
     if (orderBy == nil) {
         return [self modelsWhere:conditions parameters:parameters];
@@ -121,9 +176,13 @@
     
     NSMutableArray *models = [[NSMutableArray alloc] init];
     FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
-    
-    [db open];
+    BOOL isPrivateConnection = NO;
+    if (!db) {
+        isPrivateConnection = YES;
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
+        [db open];
+    }
+
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@",
                      table.tableName,
                      [self validatedConditionsString:conditions],
@@ -134,18 +193,29 @@
     while ([rs next]) {
         [models addObject:[self.modelClass modelWithResultSet:rs]];
     }
-    [db close];
+
+    if (isPrivateConnection) {
+        [db close];
+    }
     
     return models;
 }
 
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit
 {
+    return [self modelsWhere:conditions parameters:parameters orderBy:orderBy limit:limit database:nil];
+}
+
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit database:(FMDatabase *)db
+{
     NSMutableArray *models = [[NSMutableArray alloc] init];
     FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
-    
-    [db open];
+    BOOL isPrivateConnection = NO;
+    if (!db) {
+        isPrivateConnection = YES;
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
+        [db open];
+    }
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@ limit %ld",
                      table.tableName,
                      [self validatedConditionsString:conditions],
@@ -157,18 +227,27 @@
     while ([rs next]) {
         [models addObject:[self.modelClass modelWithResultSet:rs]];
     }
-    [db close];
+    if (isPrivateConnection) {
+        [db close];
+    }
     
     return models;
 }
-
 - (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit offset:(NSInteger)offset
+{
+    return [self modelsWhere:conditions parameters:parameters orderBy:orderBy limit:limit offset:offset database:nil];
+}
+
+- (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit offset:(NSInteger)offset database:(FMDatabase *)db
 {
     NSMutableArray *models = [[NSMutableArray alloc] init];
     FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
-    
-    [db open];
+    BOOL isPrivateConnection = NO;
+    if (!db) {
+        isPrivateConnection = YES;
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
+        [db open];
+    }
     NSString *sql = [NSString stringWithFormat:@"select * from `%@` where %@ order by %@ limit %ld offset %ld",
                      table.tableName,
                      [self validatedConditionsString:conditions],
@@ -181,19 +260,30 @@
     while ([rs next]) {
         [models addObject:[self.modelClass modelWithResultSet:rs]];
     }
-    [db close];
+    if (isPrivateConnection) {
+        [db close];
+    }
     
     return models;
 }
 
 - (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
 {
+    return [self countWhere:conditions parameters:parameters database:nil];
+}
+
+- (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters database:(FMDatabase *)db
+{
     NSInteger count = 0;
     
     FMXTableMap *table = [[FMXDatabaseManager sharedManager] tableForModel:self.modelClass];
-    FMDatabase *db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
-    
-    [db open];
+    BOOL isPrivateConnection = NO;
+    if (!db) {
+        isPrivateConnection = YES;
+        db = [[FMXDatabaseManager sharedManager] databaseForModel:self.modelClass];
+        [db open];
+    }
+
     NSString *sql = [NSString stringWithFormat:@"select count(*) as count from `%@` where %@",
                      table.tableName,
                      [self validatedConditionsString:conditions]];
@@ -203,7 +293,9 @@
         count = [rs intForColumn:@"count"];
     }
     
-    [db close];
+    if (isPrivateConnection) {
+        [db close];
+    }
     
     return count;
 }
