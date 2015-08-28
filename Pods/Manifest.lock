@@ -1,14 +1,14 @@
 PODS:
-  - FMDB (2.3):
-    - FMDB/standard
-  - FMDB/common (2.3)
-  - FMDB/standard (2.3):
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
     - FMDB/common
 
 DEPENDENCIES:
   - FMDB (~> 2.3)
 
 SPEC CHECKSUMS:
-  FMDB: 31ec26773c7f7b7890a6038235a1f2bbd933a7cb
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.38.2

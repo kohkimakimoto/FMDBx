@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-FMDB.xcscheme</key>
+		<key>FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>21E3A5B1EF1E48EE98F88180</key>
+		<key>7FC267B900F535F17A6B0E4C9D9883B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FCF6AC92C55E4C619AD13E24</key>
+		<key>C507C5AF9294D7C127BD120FCD2BE6D0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -41,6 +41,7 @@
 		C29353271945839B003D2E6B /* users.csv in Resources */ = {isa = PBXBuildFile; fileRef = C29353261945839B003D2E6B /* users.csv */; };
 		C293532819458484003D2E6B /* users.csv in Resources */ = {isa = PBXBuildFile; fileRef = C29353261945839B003D2E6B /* users.csv */; };
 		C2E4C59B1945AEA900F67DAA /* FMXTestMigration2.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E4C59A1945AEA900F67DAA /* FMXTestMigration2.m */; };
+		C2F9F91B1B903DD700856D3F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F9F91A1B903DD700856D3F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		072DB0D292F34AC28051F4FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		24F5249AA8EE3783E0BD1DCE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AE26C0112A994742AF2509ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C254D20019317EDC0040AE69 /* FMDBx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMDBx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C254D20319317EDC0040AE69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,6 +107,8 @@
 		C29353261945839B003D2E6B /* users.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = users.csv; sourceTree = "<group>"; };
 		C2E4C5991945AEA900F67DAA /* FMXTestMigration2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMXTestMigration2.h; sourceTree = "<group>"; };
 		C2E4C59A1945AEA900F67DAA /* FMXTestMigration2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMXTestMigration2.m; sourceTree = "<group>"; };
+		C2F9F91A1B903DD700856D3F /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		F2D8DA015704455B3EDE2550 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F9F91B1B903DD700856D3F /* libPods.a in Frameworks */,
 				C254D21D19317EDC0040AE69 /* XCTest.framework in Frameworks */,
 				C254D21F19317EDC0040AE69 /* UIKit.framework in Frameworks */,
 				C254D21E19317EDC0040AE69 /* Foundation.framework in Frameworks */,
@@ -133,6 +137,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65D1D3A84606CED6E126B1A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F2D8DA015704455B3EDE2550 /* Pods.debug.xcconfig */,
+				24F5249AA8EE3783E0BD1DCE /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C254D1F719317EDC0040AE69 = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +153,7 @@
 				C254D22219317EDC0040AE69 /* FMDBxTests */,
 				C254D20219317EDC0040AE69 /* Frameworks */,
 				C254D20119317EDC0040AE69 /* Products */,
-				072DB0D292F34AC28051F4FA /* Pods.xcconfig */,
+				65D1D3A84606CED6E126B1A6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +169,7 @@
 		C254D20219317EDC0040AE69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2F9F91A1B903DD700856D3F /* libPods.a */,
 				C254D20319317EDC0040AE69 /* Foundation.framework */,
 				C254D20519317EDC0040AE69 /* CoreGraphics.framework */,
 				C254D20719317EDC0040AE69 /* UIKit.framework */,
@@ -387,7 +401,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		68936D993AD04EBFB35ECEB1 /* Check Pods Manifest.lock */ = {
@@ -546,7 +560,7 @@
 		};
 		C254D22D19317EDC0040AE69 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 072DB0D292F34AC28051F4FA /* Pods.xcconfig */;
+			baseConfigurationReference = F2D8DA015704455B3EDE2550 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -560,7 +574,7 @@
 		};
 		C254D22E19317EDC0040AE69 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 072DB0D292F34AC28051F4FA /* Pods.xcconfig */;
+			baseConfigurationReference = 24F5249AA8EE3783E0BD1DCE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -574,7 +588,6 @@
 		};
 		C254D23019317EDC0040AE69 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 072DB0D292F34AC28051F4FA /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FMDBx.app/FMDBx";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -589,6 +602,10 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "FMDBxTests/FMDBxTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -607,6 +624,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FMDBx/FMDBx-Prefix.pch";
 				INFOPLIST_FILE = "FMDBxTests/FMDBxTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <FMDB.h>
+
 #import "FMDBx.h"
 #import "FMXTestMigration.h"
 
