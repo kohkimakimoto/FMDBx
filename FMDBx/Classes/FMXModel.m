@@ -26,16 +26,14 @@
     // This method was intended to override at the subclass.
 }
 
-/**
- *  Find a model by the primary key.
- *
- *  @param primaryKeyValue primary key value
- *
- *  @return model object
- */
 + (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue
 {
     return [[self query] modelByPrimaryKey:primaryKeyValue];
+}
+
++ (FMXModel *)modelByPrimaryKey:(id)primaryKeyValue database:(FMDatabase *)db
+{
+    return [[self query] modelByPrimaryKey:primaryKeyValue database:db];
 }
 
 + (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
@@ -43,9 +41,19 @@
     return [[self query] modelWhere:conditions parameters:parameters];
 }
 
++ (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters database:(FMDatabase *)db
+{
+    return [[self query] modelWhere:conditions parameters:parameters database:db];
+}
+
 + (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy
 {
     return [[self query] modelWhere:conditions parameters:parameters orderBy:orderBy];
+}
+
++ (FMXModel *)modelWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy database:(FMDatabase *)db
+{
+    return [[self query] modelWhere:conditions parameters:parameters orderBy:orderBy database:db];
 }
 
 + (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
@@ -53,9 +61,19 @@
     return [[self query] modelsWhere:conditions parameters:parameters];
 }
 
++ (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters database:(FMDatabase *)db
+{
+    return [[self query] modelsWhere:conditions parameters:parameters database:db];
+}
+
 + (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy
 {
     return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy];
+}
+
++ (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy database:(FMDatabase *)db
+{
+    return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy database:db];
 }
 
 + (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit
@@ -63,8 +81,17 @@
     return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy limit:limit];
 }
 
++ (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit database:(FMDatabase *)db
+{
+    return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy limit:limit database:db];
+}
+
 + (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit offset:(NSInteger)offset {
     return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy limit:limit offset:offset];
+}
+
++ (NSArray *)modelsWhere:(NSString *)conditions parameters:(NSDictionary *)parameters orderBy:(NSString *)orderBy limit:(NSInteger)limit offset:(NSInteger)offset database:(FMDatabase *)db {
+    return [[self query] modelsWhere:conditions parameters:parameters orderBy:orderBy limit:limit offset:offset database:db];
 }
 
 + (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters
@@ -72,9 +99,19 @@
     return [[self query] countWhere:conditions parameters:parameters];
 }
 
++ (NSInteger)countWhere:(NSString *)conditions parameters:(NSDictionary *)parameters database:(FMDatabase *)db
+{
+    return [[self query] countWhere:conditions parameters:parameters database:db];
+}
+
 + (NSInteger)count
 {
     return [self countWhere:nil parameters:nil];
+}
+
++ (NSInteger)countWithDatabase:(FMDatabase *)db
+{
+    return [self countWhere:nil parameters:nil database:db];
 }
 
 + (FMXModel *)modelWithResultSet:(FMResultSet *)rs
