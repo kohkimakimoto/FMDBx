@@ -41,7 +41,9 @@
         NSError *error = nil;
         if(![fm createDirectoryAtPath:pathToDatabase withIntermediateDirectories:YES attributes:nil error:&error]) {
             // An error has occurred, do something to handle it
-            NSLog(@"Failed to create directory \"%@\". Error: %@", pathToDatabase, error);
+            if (error) {
+                NSLog(@"Failed to create directory \"%@\". Error: %@", pathToDatabase, error.localizedDescription);
+            }
             
             // Set the default path to /Users/Shared, incase no user is logged in durring init
             self.databasePathInDocuments = [@"/Users/Shared" stringByAppendingPathComponent:[databasePath lastPathComponent]];
